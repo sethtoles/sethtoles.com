@@ -1,0 +1,189 @@
+/* ----- MAIN ----- */
+main {
+	position: relative;
+	width: 92%;
+	display: block;
+	margin: 0 auto;
+	font-size: 2.4em;
+	background-color: #F8FAFD;
+	z-index: 2;
+}
+
+#topSpace {
+	background-color: #F0F3F7;
+	height: 1.2em;
+}
+
+.category {
+	background-color: #F8FAFD;
+	padding-top: 1em;
+	padding-bottom: 3em;
+}
+
+main .category:nth-child(odd) {
+	background-color: #F0F3F7;
+}
+
+.categoryTitle {
+	float: left;
+	font-size: 1.6em;
+	margin: -1em 0 0 -0.5em;
+	padding: .05em .5em .05em 10.5em;
+	border-left: 0.5em solid;
+}
+
+#ilTitle {background-color: #ffe566;
+	border-color: #d4b51e;}
+#vaTitle {background-color: #4acaa8;
+	border-color: #228f72;}
+#gdTitle {background-color: #e05ea9;
+	border-color: #94336b;}
+#coTitle {background-color: #54a6ed;
+	border-color: #236aa8;}
+#roTitle {background-color: #4cbc61;
+	border-color: #2a7a39;}
+#idTitle {background-color: #faa03a;
+	border-color: #9f5d12;}
+#scTitle {background-color: #9c4cbc;
+	border-color: #6c2389;}
+#ckTitle {background-color: #d9524d;
+	border-color: #9a302c;}
+
+.catDesc {
+	margin: 1em 4% 1em 17em;
+}
+
+.item {
+	margin: 0 4% 0 17em;
+}
+
+a.preview {
+	display: block;
+	position: relative;
+	color: #151515;
+	margin-bottom: .6em;
+	@include transition(background-color .5s ease);
+}
+
+a.preview:hover {
+	color: #151515;
+	background-color: #E5E9EE;
+}
+
+.preview:hover>.ilB {border-color: #ffec8f;}
+.preview:hover>.vaB {border-color: #60e3c0;}
+.preview:hover>.gdB {border-color: #fd7fc8;}
+.preview:hover>.coB {border-color: #76c0ff;}
+.preview:hover>.roB {border-color: #71e487;}
+.preview:hover>.idB {border-color: #fec17a;}
+.preview:hover>.scB {border-color: #c06fe0;}
+.preview:hover>.ckB {border-color: #f97974;}
+
+.thumb {
+	height: 6em;
+	width: 6em;
+	float: left;
+}
+
+.previewDetails {
+	min-height: 6em;
+	padding-left: .7em;
+	overflow: hidden;
+	border-right: 0.5em solid rgba(255,255,255,0);
+	@include transition(border-color .5s ease);
+}
+
+.itemTitle {
+	float: left;
+}
+
+.previewDesc {
+	float: left;
+	margin-right: .7em;
+	padding-bottom: .2em;
+	clear: left;
+}
+
+.detail {
+	overflow: hidden;
+	display: none;
+	border-right: .5em solid #E0E3E7;
+	padding: 0 .6em .6em 0;
+	margin-bottom: .8em;
+}
+
+img.floatL {
+	float: left;
+	padding: .7em .7em .7em 0;
+	max-width: 40%;
+}
+
+img.floatR {
+	float: right;
+	padding: .7em 0 .7em .7em;
+	max-width: 40%;
+}
+
+img.wide {
+	width: 100%;
+}
+
+.embedContainer {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.embedWide {
+	padding-bottom: 56.25%;
+}
+
+.embedStandard {
+	padding-bottom: 66.67%;
+}
+
+.embedVGA {
+	padding-bottom: 75%;
+}
+
+.embedContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#tail {
+	position: relative;
+	width: 92%;
+	margin-left: 4%;
+	padding-bottom: 4em;
+	z-index: 1;
+}
+
+
+/* ----- DETAIL CLOSE ----- */
+#dcBox {
+	display: none;
+	width: 3%;
+	right: 4.35%;
+	top: 3em;
+	position: fixed;
+	z-index: 96;
+}
+
+#detailClose {
+	width: 100%;
+	height: 100%;
+}
+
+#detailCloseButton {
+	@include transition(fill .5s ease);
+}
+
+#detailClose:hover>#detailCloseButton {
+	fill: #97ABCE;
+}

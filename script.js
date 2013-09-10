@@ -1,5 +1,6 @@
 var $root = $("html, body"),
 	$window = $(window),
+	$oldDetail = null,
 	transform = (typeof(document.body.style.webkitTransform)) ? "-webkit-transform" : (typeof(document.body.style.msTransform)) ? "-ms-transform" : "transform";
 
 function sizeWatch(){
@@ -49,27 +50,47 @@ function scrollWatch(){
 	}
 }
 
-function dcBoxPosition(source, cb){
-	var scrY = $window.scrollTop() + 45,
-		detail = source || $(".detailOpen"),
-		dtlY = detail.offset().top,
-		dtlH = detail.height(),
-		dcBox = $("#dcBox"),
-		dcbH = dcBox.height();
+function dcBoxPosition(fixed, cb){
+	var $dcBox = $("#dcBox");
+	if(fixed){
+		$dcBox.css({"position": "fixed", "top": "30px"});
+	}else{
+		var dcbH = $dcBox.height(),
+			scrY = $window.scrollTop() + 30,
+			$detail = $(".detail").filter(":visible"),
+			dtlY = $detail.offset().top,
+			dtlH = $detail.height();
 		if(dtlY > scrY){
-			dcBox.css({"position": "absolute", "top": dtlY + "px"});
+			$dcBox.css({"position": "absolute", "top": dtlY + "px"});
 		}else if(dtlY + dtlH - dcbH < scrY){
-			dcBox.css({"position": "absolute", "top": dtlY + dtlH - dcbH + "px"});
+			$dcBox.css({"position": "absolute", "top": dtlY + dtlH - dcbH + "px"});
 		}else{
-			dcBox.css({"position": "fixed", "top": "45px"});
+			$dcBox.css({"position": "fixed", "top": "30px"});
 		}
-		if(cb && typeof(cb) == "function"){
-			cb();
-		}
+	}
+	if(cb && typeof(cb) == "function"){
+		cb();
+	}
 }
 
 function contentRowHeight(){
 	$("#resume, #about, #hire").css({"max-height": $window.height() - $("#buttonRow").height() + "px"});
+}
+
+function scrollToDetail($newDetail, $oldPreview){
+	var $prev = $newDetail.parent().prev(),
+		y = $prev.offset().top + $prev.outerHeight();
+	if($oldDetail){
+		if($oldDetail == $newDetail){
+			$newDetail = null;
+			y = Math.min(y, $window.scrollTop());
+		}else if($oldDetail.offset().top < y){
+			y -= $oldDetail.outerHeight() - $oldPreview.outerHeight();
+		}
+		$oldDetail.slideUp(800).prev().slideDown(800);
+	}
+	$oldDetail = $newDetail;
+	$root.animate({scrollTop: y}, 800);
 }
 
 var cLocSaver = (function(){
@@ -116,35 +137,30 @@ $(document).ready(function(){
 		$("#dimmer").removeClass("dim");
 		$("a.rowButtonCurrent").removeClass("rowButtonCurrent");
 		$("#overlay").css({transform: "translate(0,0)"});
-		setTimeout(function(){$("#contentRow").hide();}, 1000);
-		$("body").css({"overflow": ""});
+		setTimeout(function(){$("#contentRow").hide();}, 800);
 		e.preventDefault();
 		e.stopPropagation();
 	});
 	$(".preview").click(function(e){
-		var oldPreview = $(".previewHidden").removeClass("previewHidden"),
-			oldDetail = $(".detailOpen").stop(true, true).removeClass("detailOpen").slideUp(1000),
-			newPreview = $(this).addClass("previewHidden");
+		var $this = $(this),
+			$detail = $($this.attr("href")).slideDown(800);
+		scrollToDetail($detail, $this);
+		$this.slideUp(800);
 		$("#dcBox").fadeOut(800, function(){
-			dcBoxPosition(newPreview, function(){
+			dcBoxPosition(true, function(){
 				$("#dcBox").fadeIn(800);
 			})
 		});
-		$(newPreview.attr("href"))
-			.stop(true, true)
-			.addClass("detailOpen")
-			.slideDown(1000);
-		if(oldPreview[0] && oldPreview.offset().top < newPreview.offset().top){
-			$root.animate({
-		        scrollTop: $window.scrollTop() - oldDetail.height() + $(oldPreview).children(".thumb").height()
-		    }, 1000);
-		}
 		e.preventDefault();
 	});
 	$("#dcBox").click(function(){
-		$(this).fadeOut(800);
-		$(".detailOpen").stop(true, true).removeClass("detailOpen").slideUp(1000);
-		$(".previewHidden").removeClass("previewHidden");
+		scrollToDetail($oldDetail);
+		$(this).fadeOut(600);
 	});
-	$("#curtain").fadeOut(1000);
+	$('<img/>').attr('src', 'images/splash.jpg').load(function() {
+		$(this).remove();
+		$('#splash').css('background-image', 'url(images/splash.jpg)');
+		window.scrollTo(0, $("#splashSpacer").offset().top);
+		$("#curtain").text("").fadeOut(1000);
+	});
 });

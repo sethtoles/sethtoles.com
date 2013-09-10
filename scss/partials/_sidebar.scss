@@ -1,0 +1,69 @@
+/* ----- SIDEBAR ----- */
+#sidebar {
+	background-color: #051B3C;
+	padding: 0;
+	margin: .4em 0 1em 0;
+	position: absolute;
+	left: 2%;
+	z-index: 97;
+	font-size: 3.5em;
+}
+
+#sidebar li {
+	padding: 0 .5em 0 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	height: 2em;
+	@include transition(background-color .5s ease);
+}
+
+#sidebar li:hover {
+	background-color: #103368;
+}
+
+#sidebar img {
+	height: 100%;
+	vertical-align: middle;
+}
+
+.navCurrent {
+	background-color: #0B2B5C;
+}
+
+.Ncat {
+	vertical-align: -.15em;
+	padding: 0 .3em;
+	@include transition(color .5s ease);
+}
+
+#Sil {color: #ffe566;}
+.navCurrent #Sil {color: #ffec8f;}
+#Nil:hover #Sil {color: #fff2b2;}
+
+#Sva {color: #4acaa8;}
+.navCurrent #Sva {color: #50d5b2;}
+#Nva:hover #Sva {color: #60e3c0;}
+
+#Sgd {color: #e05ea9;}
+.navCurrent #Sgd {color: #e86db4;}
+#Ngd:hover #Sgd {color: #fd7fc8;}
+
+#Sco {color: #54a6ed;}
+.navCurrent #Sco {color: #60b3fb;}
+#Nco:hover #Sco {color: #76c0ff;}
+
+#Sro {color: #4cbc61;}
+.navCurrent #Sro {color: #52cb69;}
+#Nro:hover #Sro {color: #71e487;}
+
+#Sid {color: #faa03a;}
+.navCurrent #Sid {color: #ffb057;}
+#Nid:hover #Sid {color: #fec17a;}
+
+#Ssc {color: #9c4cbc;}
+.navCurrent #Ssc {color: #aa55cb;}
+#Nsc:hover #Ssc {color: #c06fe0;}
+
+#Sck {color: #d9524d;}
+.navCurrent #Sck {color: #f05d57;}
+#Nck:hover #Sck {color: #f97974;}

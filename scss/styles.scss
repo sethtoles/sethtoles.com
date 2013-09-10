@@ -1,0 +1,24 @@
+/*	CSS Design by Seth Toles for sethtoles.com */
+
+@mixin transition($arguments...) {
+	transition: $arguments;
+	-webkit-transition: $arguments;
+}
+
+@mixin transition-transform($arguments...) {
+	transition: transform $arguments;
+	transition: -ms-transform $arguments;
+	-webkit-transition: -webkit-transform $arguments;
+}
+
+@mixin transform($arguments...) {
+	transform: $arguments;
+	-webkit-transform: $arguments;
+	-ms-transform: $arguments;
+}
+
+@import "partials/global";
+@import "partials/overlay";
+@import "partials/sidebar";
+@import "partials/main";
+@import "partials/splash";

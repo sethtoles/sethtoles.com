@@ -1,0 +1,118 @@
+/* ----- OVERLAY ----- */
+#overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	z-index: 99;
+	font-size: 2.4em;
+	background-color: #ffffff;
+	@include transition-transform(1s ease 0);
+}
+
+#dimmer {
+	position: fixed;
+	width: 100%;
+	height: 0%;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.3);
+	z-index: 98;
+	@include transition(opacity .8s ease);
+}
+
+#dimmer.dim {
+	height: 100%;
+	opacity: 1;
+}
+
+#buttonRow {
+	position: absolute;
+	width: 100%;
+	height: 3.25em;
+	margin-top: -3.25em;
+	background-color: #0C1222;
+	text-align: center;
+}
+
+a.rowButton {
+	width: 32.333%;
+	padding-right: 1%;
+	float: left;
+	font-size: 1.5em;
+	background-color: #0C1222;
+	color: #97ABCE;
+	@include transition(background-color .5s ease, color .5s ease);
+}
+
+a.rowButton:hover {
+	color: #ffffff;
+	background-color: #121F33;
+}
+
+a.rowButtonCurrent, a.rowButtonCurrent:hover {
+	color: #0C1222;
+	background-color: #ffffff;
+}
+
+#resumeTitle, #aboutTitle, #hireTitle {
+	width: 80%;
+	padding: .5em 0 .5em 10%;
+	float: left;
+}
+
+.closeBox {
+	width: 10%;
+	max-width: 1.5em;
+	float: right;
+	height: 100%;
+	padding-top: 1.1em
+}
+
+.close {
+	opacity: 0;
+	height: 0;
+	width: 100%;
+	margin-top: -50%;
+	@include transition(opacity .5s ease);
+}
+
+.closeCircle {
+	@include transition(fill .5s ease);
+}
+
+.close:hover>.closeCircle {
+	fill: #97ABCE;
+}
+
+.rowButtonCurrent .close {
+	opacity: 1;
+	height: 100%;
+}
+
+#contentRow {
+	position: absolute;
+	width: 300%;
+	background-color: #ffffff;
+	display: none;
+	@include transition-transform(1s ease);
+}
+
+#resume, #about, #hire {
+	float: left;
+	width: 23.33%;
+	padding: 0 5%;
+	overflow: hidden;
+}
+
+#about {
+	text-align: center;
+}
+
+#hire {
+	text-align: right;
+}
+
+#sig {
+	height: 3em;
+	padding-top: .5em;
+}
