@@ -10,13 +10,6 @@
 	background-position: center top;
 }
 
-#iconWrapper {
-	width: 100%;
-	/* height set with js based on window */
-	position: absolute;
-	top: 0;
-}
-
 .icon {
 	top: 60%;
 	left: 50%;
@@ -85,7 +78,7 @@
 
 #icon8 {
 	@include transform(translate(-50%,-50%)
-				rotate(105deg)
-				translateY(-285%)
-				rotate(-105deg));
+		rotate(105deg)
+		translateY(-285%)
+		rotate(-105deg));
 }

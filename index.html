@@ -6,11 +6,11 @@
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div id="curtain">Loading...</div>
+	<div id="curtain"><p>Your have Javascript disabled.</p><p>Please enable Javascript and reload the page to continue</p></div>
 	<div id="dimmer"></div>
 	<section id="overlay">
 		<section id="buttonRow">
-			<a href="#resume" class="rowButton">
+			<a data-href="#resume" class="rowButton">
 				<div id="resumeTitle">Resume</div>
 				<div class="closeBox">
 					<svg class="close" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100" version="1.1">
@@ -19,7 +19,7 @@
 					</svg>
 				</div>
 			</a>
-			<a href="#about" class="rowButton">
+			<a data-href="#about" class="rowButton">
 				<div id="aboutTitle">About</div>
 				<div class="closeBox">
 					<svg class="close" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100" version="1.1">
@@ -28,7 +28,7 @@
 					</svg>
 				</div>
 			</a>
-			<a href="#hire" class="rowButton">
+			<a data-href="#hire" class="rowButton">
 				<div id="hireTitle">Hire Me</div>
 				<div class="closeBox">
 					<svg class="close" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100" version="1.1">
@@ -49,8 +49,8 @@
 				<h5>TIG steel and aluminum welding, MIG steel welding, soldering, manual lathe and mill work, molding latex rubber</h5>
 				<h1>EDUCATION</h1>
 				<h5>Hampshire College, Amherst, MA<br>Graduated 2013</h5>
-				<h3>Concentrated in Robotics</h3>
-				<h5>Senior year independent work included designing, building, and programming a robot, which used genetic programming techniques to autonomously develop strategies for scaling a small climbing wall.</h5>
+				<h3>Concentrated in robotics</h3>
+				<h5>Senior year independent work included designing, building, and programming aot, which used genetic programming techniques to autonomously develop strategies for scaling a small climbing wall.</h5>
 				<h1>WORK EXPERIENCE</h1>
 				<h3>Freelance Design, Videography, Motion Graphics
 					<span class="detailRight">June 2006 - Present</span>
@@ -59,7 +59,7 @@
 				<h3>Robot Construction and Maintenance
 					<span class="detailRight">March 2012 - January, 2013</span>
 				</h3>
-				<h5>Constructed, upgraded, and maintained a set of squirrel-mimicking robots for animal behavior research at Hampshire college. Work included designing and implementing electrical and mechanical systems and interfacing with existing software in order to control squirrel models. Reference available upon request.</h5>
+				<h5>Constructed, upgraded, and maintained a set of squirrel-mimickingots for animal behavior research at Hampshire college. Work included designing and implementing electrical and mechanical systems and interfacing with existing software in order to control squirrel models. Reference available upon request.</h5>
 				<h3>Solar Energy Workshop at Hampshire College
 					<span class="detailRight">June 13 - August 27, 2012</span>
 				</h3>
@@ -94,56 +94,56 @@
 				<p>I am currently available for both full-time and freelance work.<br>
 					You can contact me by any of the following methods:
 				</p>
-				<p>email: <b><span id="email"></span></b></p>
+				<p>email: <b><a id="email" href=""></a></b></p>
 				<p>cell: <b><span id="cell"></span></b></p>
 				<p><a href="http://www.linkedin.com/pub/seth-toles/2b/92b/144" target="_blank">Connect with me on LinkedIn</a></p>
 			</section>
 		</section>
 	</section>
 	<ul id="sidebar">
-		<a class="scroll" href="#ilTitle">
+		<a class="scroll" data-href="#ilTitle">
 			<li id="Nil">
 				<img src="images/qili.svg" />
 				<span id="Sil" class="Ncat">Illustration</span>
 			</li>
 		</a>
-		<a class="scroll" href="#vaTitle">
+		<a class="scroll" data-href="#vaTitle">
 			<li id="Nva">
 				<img src="images/qvai.svg" />
 				<span id="Sva" class="Ncat">Video & Animation</span>
 			</li>
 		</a>
-		<a class="scroll" href="#gdTitle">
+		<a class="scroll" data-href="#gdTitle">
 			<li id="Ngd">
 				<img src="images/qgdi.svg" />
 				<span id="Sgd" class="Ncat">Graphic Design</span>
 			</li>
 		</a>
-		<a class="scroll" href="#coTitle">
+		<a class="scroll" data-href="#coTitle">
 			<li id="Nco">
 				<img src="images/qcoi.svg" />
 				<span id="Sco" class="Ncat">Code</span>
 			</li>
 		</a>
-		<a class="scroll" href="#roTitle">
+		<a class="scroll" data-href="#roTitle">
 			<li id="Nro">
 				<img src="images/qroi.svg" />
 				<span id="Sro" class="Ncat">Robotics</span>
 			</li>
 		</a>
-		<a class="scroll" href="#idTitle">
+		<a class="scroll" data-href="#idTitle">
 			<li id="Nid">
 				<img src="images/qidi.svg" />
 				<span id="Sid" class="Ncat">Industrial Design</span>
 			</li>
 		</a>
-		<a class="scroll" href="#scTitle">
+		<a class="scroll" data-href="#scTitle">
 			<li id="Nsc">
 				<img src="images/qsci.svg" />
 				<span id="Ssc" class="Ncat">Sculpture</span>
 			</li>
 		</a>
-		<a class="scroll" href="#ckTitle">
+		<a class="scroll" data-href="#ckTitle">
 			<li  id="Nck">
 				<img src="images/qcki.svg" />
 				<span id="Sck" class="Ncat">Cooking</span>
@@ -160,23 +160,23 @@
 		<div id="topSpace"></div>
 		<section class="category" id="il">
 			<div id="ilTitle" class="categoryTitle">Illustration</div>
-			<section class="catDesc">
-				I started illustrating, as most people do, as soon as I was able to hold a crayon, and though I often got lost in a drawing or painting, illustration never became the focal point of my life. As such, when planning out this website, I was inclined to just include my illustrations amongst my graphic design work, as they are both about using imagery to convey information. However, I found there to be an important distinction that set them apart. Where my graphic design work is about organizing and condensing data into accessible forms, my illustrations try to stretch ideas out and tell stories. As much as I am inclined towards the more precise and practical nature of graphic design, illustration keeps calling me back.
+			<section class="catDesc ilB">
+				I started illustrating, as many people do, as soon as I was able to hold a crayon, and though I often got lost in a drawing or painting, illustration never became the focal point of my life. My preferred methods of working visually usually revolve around organizing and condensing information, which fits graphic design work well, but doesn't lend itself to what I think makes successful illustration. It is when I want to stretch ideas out and tell stories with my imagery that I turn to the more fluid process of illustration.
 			</section>
 			<section class="item">
-				<a href="#ilSongReader" class="preview">
+				<a data-href="#ilSongReader" class="preview ilB">
 					<img class="thumb" src="images/thumbs/ilSongReader.jpg" />
-					<div class="previewDetails ilB">
-						<h2 class="itemTitle">Song Reader Album Cover</h2>
+					<div class="previewDetails">
+						<h2>Song Reader Album Cover</h2>
 						<h4>(Photoshop,&nbsp;June&nbsp;2013)</h4>
-						<span class="previewDesc">
-							The cover image for Max Miller's latest album, an interpretation of Beck's "Song Reader," which was released only as sheet music. The imagery in this piece was inspired both by the concept of the Song Reader album and by Max's unique delivery of it.
-						</span>
+						<div class="previewDesc">
+							The cover image for Max Miller's latest album, an interpretation of Beck's "Song Reader."
+						</div>
 					</div>
 				</a>
-				<section id="ilSongReader" class="detail">
+				<section id="ilSongReader" class="detail ilB">
 					<img class="wide" src="images/full/ilSongReader.jpg" />
-					<h2 class="itemTitle">Song Reader Album Cover</h2>
+					<h2>Song Reader Album Cover</h2>
 					<h4>(Photoshop,&nbsp;June&nbsp;2013)</h4>
 					<p>
 					When my good friend and musician <a href="http://maxmiller.bandcamp.com/" target="_blank">Max Miller</a> told me he was going to record a full version of Beck's latest album, Song Reader, I knew I wanted to be a part of the project. Beck released Song Reader only as a booklet of sheet music, so if you wanted to hear it, you would have to play it yourself. As a huge admirer of Beck's work, Max was ecstatic about this opportunity, and immediately began the huge undertaking of recording the entire album. I'm a fan of Beck as well, and loved the concept of the album, so when Max mentioned he needed a cover for his interpretation, I immediately offered to help.
@@ -190,373 +190,376 @@
 				</section>
 			</section>
 			<section class="item">
-				<a href="#ilHeyHeyHey" class="preview">
+				<a data-href="#ilHeyHeyHey" class="preview ilB">
 					<img class="thumb" src="images/thumbs/ilHeyHeyHey.jpg" />
-					<div class="previewDetails ilB">
-						<h2 class="itemTitle">"Hey. HEY. Hey!"</h2>
+					<div class="previewDetails">
+						<h2>"Hey. HEY. Hey!"</h2>
 						<h4>(Dry&nbsp;erase&nbsp;marker,&nbsp;March&nbsp;2011)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A whiteboard drawing, which slowly evolved from a simple sketch of an old man's head into something much more bizarre.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="ilHeyHeyHey" class="detail">
+				<section id="ilHeyHeyHey" class="detail ilB">
 					<img class="wide" src="images/full/ilHeyHeyHey.jpg" />
-					<h2 class="itemTitle">"Hey. HEY. Hey!"</h2>
+					<h2>"Hey. HEY. Hey!"</h2>
 					<h4>(Dry&nbsp;erase&nbsp;marker,&nbsp;March&nbsp;2011)</h4>
 					<p>
-					Throughout college I kept a small whiteboard on my door, and amongst the messages from friends, I would often do a quick sketch. One of these sketches, a wrinkly and delirious-looking old man's head, particularly appealed to me, and after a few days, I cleared the rest of the board and began to expand the drawing. There wasn't enough space to give the man a full body, so I I gave him a caterpillar body, which could wrap around the bottom of the whiteboard. What if this caterpillar man was wearing an ill-fitting sweater? Performing terrible stand-up comedy? These are the kinds of questions I would ask myself each time I came to a new section of the drawing. What if the audience was a giant head with a gaping mouth full of shattered and worn-down molars? What if his hair was full of boobs? Ultimately, I tried to keep the drawing an even blend of grotesque caricature and complete fantasy.
+					Throughout college I kept a small whiteboard on my door, and amongst the messages from friends, I would often do a quick sketch. One of these sketches, a wrinkly and delirious-looking old man's head, particularly appealed to me, and after a few days, I cleared the rest of the board and began to expand the drawing. There wasn't enough space to give the man a full body, so I I gave him a caterpillar body, which could wrap around the bottom of the whiteboard. What if this caterpillar man was wearing an ill-fitting sweater? Performing terrible stand-up comedy? These are the kinds of questions I would ask myself each time I came to a new section of the drawing, and they helped me achieve the exact look of fantastical grotesque caricature I was aiming for.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#ilAbstractMatrix" class="preview">
+				<a data-href="#ilAbstractMatrix" class="preview ilB">
 					<img class="thumb" src="images/thumbs/ilAbstractMatrix.jpg" />
-					<div class="previewDetails ilB">
-						<h2 class="itemTitle">Abstract Matrix</h2>
+					<div class="previewDetails">
+						<h2>Abstract Matrix</h2>
 						<h4>(Pencil,&nbsp;December&nbsp;2007)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A pencil drawing done my senior year in high school. The concept came from a simple sketch I drew when I was feeling uninspired.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="ilAbstractMatrix" class="detail">
+				<section id="ilAbstractMatrix" class="detail ilB">
 					<img class="wide" src="images/full/ilAbstractMatrix.jpg" />
-					<h2 class="itemTitle">Abstract Matrix</h2>
+					<h2>Abstract Matrix</h2>
 					<h4>(Pencil,&nbsp;December&nbsp;2007)</h4>
 					<p>
-						I was in a drawing class in high school, and had been asked to draw a still-life of a potted plant as an exercise in depth and shading. I didn't find this to be a particularly inspiring prompt, so I instead started doodling in my sketchbook. My extremely kind and supportive teacher came around to see my progress, and upon spotting one of my sketches, some black and white ovular forms scattered over a grid, he suggested I fill that sketch out, on a full 18"x24" sheet of paper, giving the forms texture and depth. I was much happier with this idea.
-					</p>
-					<p>
-						
+						I was in a drawing class in high school, and had been asked to draw a still-life of a potted plant as an exercise in depth and shading. I didn't find this to be a particularly inspiring prompt, so I instead started doodling in my sketchbook. My very supportive teacher came around to see my progress, and upon spotting one of my sketches, some black and white ovular forms scattered over a grid, he suggested I fill that sketch out, on a full 18"x24" sheet of paper, giving the forms texture and depth. I was much happier with this idea. Since the original prompt was about developing depth, I focused especially on how light would play across these forms, making sure each element was casting shadows on its surroundings. I chose the materials of the grid to further explore lighting and texture. The horizontal icicles challenged me with reflection and refraction, while the vertical sponge columns were a challenge in creating a uniform yet random pattern.
 					</p>
 				</section>
 			</section>
 		</section>
 		<section class="category" id="va">
 			<div id="vaTitle" class="categoryTitle">Video & Animation</div>
-			<section class="catDesc">
+			<section class="catDesc vaB">
 				My relationship with video began around the age of 10, when my parents first allowed me to play with their camcorder. Without editing software or tape decks, I edited my short movies in-camera, rewinding to the right spot for each cut and re-recording, usually multiple times, until the timing was right and the take was good. Needless to say, when I first experienced Final Cut Pro as a freshman in high school, I was ecstatic, and quickly fell in love with the digital editing process. I started doing videography for plays and events, but was dissatisfied with the lack of creativity these jobs required. To make the work more interesting, I taught myself how to build intricate DVD menus, for which I would create simple 2D and 3D animations. However, I didn't really scratch the surface of animation until I was able to take a few computer animation classes in college.
 			</section>
 			<section class="item">
-				<a href="#vaLethalBark" class="preview">
+				<a data-href="#vaLethalBark" class="preview vaB">
 					<img class="thumb" src="images/thumbs/vaLethalBark.jpg" />
-					<div class="previewDetails vaB">
-						<h2 class="itemTitle">Lethal Bark Visuals</h2>
+					<div class="previewDetails">
+						<h2>Lethal Bark Visual</h2>
 						<h4>(AfterEffects,&nbsp;June&nbsp;2011)</h4>
-						<span class="previewDesc">
-							One of a set of simple motion graphics made to accompany the songs on band Lethal Bark's first demo.
-						</span>
+						<div class="previewDesc">
+							A simple motion graphic made to accompany a song from band Lethal Bark's first demo.
+						</div>
 					</div>
 				</a>
-				<section id="vaLethalBark" class="detail">
+				<section id="vaLethalBark" class="detail vaB">
 					<div class="embedContainer embedWide">
-						<iframe src="http://player.vimeo.com/video/73668265" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http://player.vimeo.com/video/73668265?title=0&byline=0&portrait=0&api=1&color=4ACAA8" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
-					<h2 class="itemTitle">Lethal Bark Visual</h2>
+					<h2>Lethal Bark Visual</h2>
 					<h4>(AfterEffects,&nbsp;June&nbsp;2011)</h4>
 					<p>
-						One of a set of simple motion graphics made to accompany the songs on band Lethal Bark's first demo. Further description coming soon...
+						This video is one of a set, which I produced for the songs of band <a href="http://lethalbark.com/" target="_blank">Lethal Bark's</a> first demo album. The band was looking for something simple, with the only real requirement being that the lyrics were somehow showcased. Being that their logo was circular, using it to simulate a turning vinyl was an easy parallel to make. The addition of a pumping speaker made things more visually interesting, and provided a source for the lyrics. Since the layout was so minimal, other than manually adding the lyrics to each video, the real challenge of the project became attention to detail in each element. Things like matching the speaker's oscillation to the average BPM of each song, adding a faint crackle as the needle touches down, or changing the offset between the player's arm and its shadow were what made this project really fun.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#vaInfiniteChips" class="preview">
+				<a data-href="#vaInfiniteChips" class="preview vaB">
 					<img class="thumb" src="images/thumbs/vaInfiniteChips.jpg" />
-					<div class="previewDetails vaB">
-						<h2 class="itemTitle">Infinite Chips</h2>
+					<div class="previewDetails">
+						<h2>Infinite Chips</h2>
 						<h4>(Shake,&nbsp;April&nbsp;2011)</h4>
-						<span class="previewDesc">
-							A project in chroma keying and tracking. Made extra challenging by working with handheld iPhone footage.
-						</span>
+						<div class="previewDesc">
+							A project in chroma keying and tracking with a silly concept.
+						</div>
 					</div>
 				</a>
-				<section id="vaInfiniteChips" class="detail">
+				<section id="vaInfiniteChips" class="detail vaB">
 					<div class="embedContainer embedWide">
-						<iframe src="http://player.vimeo.com/video/73595713" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http://player.vimeo.com/video/73595713?title=0&byline=0&portrait=0&api=1&color=4ACAA8" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
-					<h2 class="itemTitle">Infinite Chips</h2>
+					<h2>Infinite Chips</h2>
 					<h4>(Shake,&nbsp;April&nbsp;2011)</h4>
 					<p>
-						A project in chroma keying and tracking. Made extra challenging by working with handheld iPhone footage. Further description coming soon...
+						This project was an assignment for a digital media class, intended to demonstrate chroma keying and motion tracking using the compositing program Shake. I have always found recursion fascinating, and on the date I had access to the green screen room, I happened to have an empty chip bag with me, which inspired this video's concept. Unfortunately, all of the school's cameras had been checked out, so I had to resort to an iPhone, which a classmate operated for the shot. This presented numerous challenges, starting with the fact that the handheld footage was shaky, and including the iPhone's automatic color correction, which shifted multiple times during the shot. The shaking wasn't a huge issue once tracking began, as I was already moving elements around the screen, it just became one more factor to deal with. To deal with the initial motion, I set myself on a cloud floating in the sky. The ridiculous nature of this setup makes the fact that the cloud is shaking all over the place less problematic. Ultimately, both the shaking and color issues meant that I simply had to do a lot of manual editing of mattes and motion keyframes, a tedious but satisfying process, and one which taught me a lot more than I would have gotten from perfectly still, clear footage.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#vaDippy" class="preview">
+				<a data-href="#vaDippy" class="preview vaB">
 					<img class="thumb" src="images/thumbs/vaDippy.jpg" />
-					<div class="previewDetails vaB">
-						<h2 class="itemTitle">Dippy Loves Lamp</h2>
+					<div class="previewDetails">
+						<h2>Dippy Loves Lamp</h2>
 						<h4>(Maya,&nbsp;October&nbsp;2010)</h4>
-						<span class="previewDesc">
-							A project for my second computer animation class. I was provided sketches of the character, "Dippy," and required to model, rig, light, shade, and animate the rest.
-						</span>
+						<div class="previewDesc">
+							A project for my second computer animation class, which included almost every element of the animation pipeline.
+						</div>
 					</div>
 				</a>
-				<section id="vaDippy" class="detail">
+				<section id="vaDippy" class="detail vaB">
 					<div class="embedContainer embedStandard">
-						<iframe src="http://player.vimeo.com/video/73597581" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http://player.vimeo.com/video/73597581?title=0&byline=0&portrait=0&api=1&color=4ACAA8" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
-					<h2 class="itemTitle">A Clockwork Snorange</h2>
+					<h2>Dippy Loves Lamp</h2>
 					<h4>(Maya,&nbsp;October&nbsp;2010)</h4>
+					<img class="floatR" src="images/full/vaDippy.jpg" />
 					<p>
-						A project for my second computer animation class. I was provided sketches of the character, "Dippy," and required to model, rig, light, shade, and animate the rest. Further description coming soon...
+						This project for my second computer animation class took up most of the semester, as it started only with a sketch of the character, "Dippy," and required I model, rig, shade, light, and animate the rest. I came up with the concept during the modeling phase, when I couldn't stop seeing Dippy as looking like a lamp. When it came to shading, I used the same photo texture on Dippy's "head" as on the lamp shade, and the lamp's brass on Dippy's leg, changing material setting to give them the right look, including bump mapping on Dippy for a skin look. Unique to the Dippy model is the volumetric shader on his toenails, which was required by the assignment.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#vaClockworkSnorange" class="preview">
+				<a data-href="#vaClockworkSnorange" class="preview vaB">
 					<img class="thumb" src="images/thumbs/vaClockworkSnorange.jpg" />
-					<div class="previewDetails vaB">
-						<h2 class="itemTitle">A Clockwork Snorange</h2>
+					<div class="previewDetails">
+						<h2>A Clockwork Snorange</h2>
 						<h4>(Maya,&nbsp;May&nbsp;2010)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							My final project for my first computer animation class.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="vaClockworkSnorange" class="detail">
+				<section id="vaClockworkSnorange" class="detail vaB">
 					<div class="embedContainer embedWide">
-						<iframe src="http://player.vimeo.com/video/72522261" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http://player.vimeo.com/video/72522261?title=0&byline=0&portrait=0&api=1&color=4ACAA8" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
-					<h2 class="itemTitle">A Clockwork Snorange</h2>
+					<h2>A Clockwork Snorange</h2>
 					<h4>(Maya,&nbsp;May&nbsp;2010)</h4>
+					<img class="floatR" src="images/full/vaClockworkSnorange.jpg" />
 					<p>
-						My final project for my first computer animation class. Further description coming soon...
+						My final project for my first computer animation class.
 					</p>
 				</section>
 			</section>
 		</section>
 		<section class="category" id="gd">
 			<div id="gdTitle" class="categoryTitle">Graphic Design</div>
-			<section class="catDesc">
+			<section class="catDesc gdB">
 				When I first started editing digital graphics, I was using the lasso and pencil tools in AppleWorks, changing recognizable logos to be somewhat humorous and often crude. Exactly how I progressed from those beginnings to paying work is a bit hazy, but it certainly involved teaching myself Photoshop and demonstrating an ability to produce original designs. My early work was mostly on posters, and occasionally icon design, both of which posed fun challenges, but my interest was really piqued when I started doing web design. In designing websites, I was practicing layout and iconography together, and had to add in the element of user experience. It is this kind of multi-faceted challenge that I find most fulfilling.
 				<br><br>As a large part of building a website is writing the code, I will include a note on projects which are also listed in the Code section. Entries here will focus exclusively on the design process.
 			</section>
 			<section class="item">
-				<a href="#gdSethToles" class="preview">
+				<a data-href="#gdSethToles" class="preview gdB">
 					<img class="thumb" src="images/thumbs/SethToles.jpg" />
-					<div class="previewDetails gdB">
-						<h2 class="itemTitle">SethToles.com</h2>
+					<div class="previewDetails">
+						<h2>SethToles.com</h2>
 						<h4>(Photoshop,&nbsp;Sketch,&nbsp;HTML,&nbsp;CSS,&nbsp;August&nbsp;2013)</h4>
-						<span class="previewDesc">
-							In putting this portfolio site together, I wanted to incorporate some styles I hadn't yet tried alongside ideas of my own, without straying to far from a typical portfolio format. I also discuss the code behind the design in the Code section.
-						</span>
+						<div class="previewDesc">
+							In putting this portfolio site together, I wanted to incorporate some styles I hadn't yet tried alongside ideas of my own.
+						</div>
 					</div>
 				</a>
-				<section id="gdSethToles" class="detail">
-					<h2 class="itemTitle">SethToles.com</h2>
-					<h4>(Photoshop,&nbsp;Sketch,&nbsp;HTML,&nbsp;CSS,&nbsp;August&nbsp;2013)</h4>
+				<section id="gdSethToles" class="detail gdB">
+					<div>
+						<h2>SethToles.com</h2>
+						<h4>(Photoshop,&nbsp;Sketch,&nbsp;HTML,&nbsp;CSS,&nbsp;August&nbsp;2013)</h4>
+					</div>
+					<img class="floatR" src="images/full/gdSethToles.jpg" />
 					<p>
-						In putting this portfolio site together, I wanted to incorporate some styles I hadn't yet tried alongside ideas of my own, without straying to far from a typical portfolio format. Further description coming soon...
+						In putting this portfolio site together, I wanted to incorporate some styles I hadn't yet tried alongside ideas of my own, without straying to far from a typical portfolio format.
 					</p>
+					<p>The process of coding this site is described in the Code section</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#gdSeedLibrary" class="preview">
+				<a data-href="#gdSeedLibrary" class="preview gdB">
 					<img class="thumb" src="images/thumbs/gdSeedLibrary.jpg" />
-					<div class="previewDetails gdB">
-						<h2 class="itemTitle">Seed Lending Library Logo</h2>
+					<div class="previewDetails">
+						<h2>Seed Lending Library Logo</h2>
 						<h4>(Photoshop,&nbsp;April&nbsp;2013)</h4>
-						<span class="previewDesc">
-							This logo is was designed for a seed storing and lending library at Hampshire College. It is displayed on information packets and the physical catalog unit.
-						</span>
+						<div class="previewDesc">
+							This logo is was designed for a seed storing and lending library at Hampshire College.
+						</div>
 					</div>
 				</a>
-				<section id="gdSeedLibrary" class="detail">
-					<h2 class="itemTitle">Seed Lending Library Logo</h2>
-					<h4>(Photoshop,&nbsp;April&nbsp;2013)</h4>
-					<img class="wide" src="images/full/gdSeedLibrary.jpg" />
+				<section id="gdSeedLibrary" class="detail gdB">
+					<div>
+						<img class="wide" src="images/full/gdSeedLibrary.jpg" />
+						<h2>Seed Lending Library Logo</h2>
+						<h4>(Photoshop,&nbsp;April&nbsp;2013)</h4>
+					</div>
 					<img class="floatR" src="images/full/gdSeedLibrary-sketch.jpg" />
 					<p>
-						This logo is was designed for a seed storing and lending library at Hampshire College. It is displayed on information packets and the physical catalog unit. Further description coming soon...
+						This logo is was designed for a seed storing and lending library at Hampshire College. It is displayed on information packets and the physical catalog unit.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#gdCybermonkeyStudios" class="preview">
+				<a data-href="#gdCybermonkeyStudios" class="preview gdB">
 					<img class="thumb" src="images/thumbs/gdCybermonkeyStudios.jpg" />
-					<div class="previewDetails gdB">
-						<h2 class="itemTitle">Cybermonkey Studios</h2>
+					<div class="previewDetails">
+						<h2>Cybermonkey Studios</h2>
 						<h4>(Photoshop,&nbsp;HTML,&nbsp;CSS,&nbsp;September&nbsp;2010)</h4>
-						<span class="previewDesc">
-							Cyberonkey Studios was the name a group of my friends and I put on all of our collaborations between 2004 and 2011. As a part of showcasing that work, I designed a website and set of graphics. One feature of the site is also discussed in the Code section.
-						</span>
+						<div class="previewDesc">
+							A website and set of graphics for showcasing my collaborations with friends.
+						</div>
 					</div>
 				</a>
-				<section id="gdCybermonkeyStudios" class="detail">
-					<h2 class="itemTitle">Cybermonkey Studios</h2>
-					<h4>(Photoshop,&nbsp;HTML,&nbsp;CSS,&nbsp;September&nbsp;2010)</h4>
+				<section id="gdCybermonkeyStudios" class="detail gdB">
+					<div>
+						<h2>Cybermonkey Studios</h2>
+						<h4>(Photoshop,&nbsp;HTML,&nbsp;CSS,&nbsp;September&nbsp;2010)</h4>
+					</div>
 					<img class="floatR" src="images/full/gdCybermonkeyStudios.jpg" />
 					<p>
-						Cybermonkey Studios was the name a group of my friends and I put on all of our collaborations between 2004 and 2011. As a part of showcasing that work, I designed a website and set of graphics. Further description coming soon...
+						Cybermonkey Studios was the name a group of my friends and I put on all of our collaborations between 2004 and 2011. As a part of showcasing that work, I designed a website and set of graphics.
 					</p>
+					<p>One aspect of the Cybermonkey Studios site, a web audio player, is described in the Code section.</p>
 					<img class="wide" src="images/full/gdCybermonkeyStudios-Films.jpg" />
 				</section>
 			</section>
 			<section class="item">
-				<a href="#gdNewmansConcert" class="preview">
+				<a data-href="#gdNewmansConcert" class="preview gdB">
 					<img class="thumb" src="images/thumbs/gdNewmansConcert.jpg" />
-					<div class="previewDetails gdB">
-						<h2 class="itemTitle">"The Newmans" Concert Poster</h2>
+					<div class="previewDetails">
+						<h2>The Newmans Concert Poster</h2>
 						<h4>(Photoshop,&nbsp;May&nbsp;2010)</h4>
-						<span class="previewDesc">
-							I put together this poster for a small concert hosted by band "The Newmans." This was one of my first tries at the grunge style, which was especially prevalent at the time.
-						</span>
+						<div class="previewDesc">
+							A concert poster in the grunge style, which was especially prevalent at the time.
+						</div>
 					</div>
 				</a>
-				<section id="gdNewmansConcert" class="detail">
-					<h2 class="itemTitle">"The Newmans" Concert Poster</h2>
-					<h4>(Photoshop,&nbsp;May&nbsp;2010)</h4>
-					<img class="wide" src="images/full/gdNewmansConcert.jpg" />
+				<section id="gdNewmansConcert" class="detail gdB">
+					<div>
+						<img class="wide" src="images/full/gdNewmansConcert.jpg" />
+						<h2>The Newmans Concert Poster</h2>
+						<h4>(Photoshop,&nbsp;May&nbsp;2010)</h4>
+					</div>
 					<p>
-						I put together this poster for a small concert hosted by band "The Newmans." This was one of my first attempts in the grunge style, which was especially prevalent at the time. Further description coming soon...
+						I put together this poster for a small concert hosted by band "The Newmans." This was one of my first attempts in the grunge style, which was especially prevalent at the time.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#gdOnTheTown" class="preview">
+				<a data-href="#gdOnTheTown" class="preview gdB">
 					<img class="thumb" src="images/thumbs/gdOnTheTown.jpg" />
-					<div class="previewDetails gdB">
-						<h2 class="itemTitle">"On The Town" Poster</h2>
+					<div class="previewDetails">
+						<h2>On The Town Poster</h2>
 						<h4>(Photoshop,&nbsp;March&nbsp;2007)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							My first poster job, done for my high school's production of "On the Town."
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="gdOnTheTown" class="detail">
-					<h2 class="itemTitle">"On The Town" Poster</h2>
-					<h4>(Photoshop,&nbsp;March&nbsp;2007)</h4>
-					<img class="wide" src="images/full/gdOnTheTown.jpg" />
+				<section id="gdOnTheTown" class="detail gdB">
+					<div>
+						<img class="wide" src="images/full/gdOnTheTown.jpg" />
+						<h2>On The Town Poster</h2>
+						<h4>(Photoshop,&nbsp;March&nbsp;2007)</h4>
+					</div>
 					<p>
-						My first poster job, done for my high school's production of "On the Town." Further description coming soon...
+						My first poster job, done for my high school's production of "On the Town."
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#gdSignalFire" class="preview">
+				<a data-href="#gdSignalFire" class="preview gdB">
 					<img class="thumb" src="images/thumbs/gdSignalFire.jpg" />
-					<div class="previewDetails gdB">
-						<h2 class="itemTitle">Signal Fire Strategies Logo</h2>
+					<div class="previewDetails">
+						<h2>Signal Fire Strategies Logo</h2>
 						<h4>(Photoshop,&nbsp;June&nbsp;2006)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							This logo was the very first real graphic design job I ever took on.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="gdSignalFire" class="detail">
-					<h2 class="itemTitle">Signal Fire Strategies Logo</h2>
-					<h4>(Photoshop,&nbsp;June&nbsp;2006)</h4>
+				<section id="gdSignalFire" class="detail gdB">
+					<div>
+						<h2>Signal Fire Strategies Logo</h2>
+						<h4>(Photoshop,&nbsp;June&nbsp;2006)</h4>
+					</div>
 					<img class="floatL" src="images/full/gdSignalFire.jpg" />
 					<p>
-						This logo was the very first real graphic design job I ever took on. Further description coming soon...
+						This logo was the very first real graphic design job I ever took on.
 					</p>
 				</section>
 			</section>
 		</section>
 		<section class="category" id="co">
 			<div id="coTitle" class="categoryTitle">Code</div>
-			<section class="catDesc">
+			<section class="catDesc coB">
 				Much to my disappointment, my high school didn't provide any programming classes, so when I started building websites, I had to figure things out for myself. My first steps were in Dreamweaver, which allowed me to lay out my site visually. I could then open up the source code and play with attributes to figure out what they did. Using this method, I got pretty comfortable with HTML and CSS, but when I got to Javascript, I had to turn to online resources. By the end of high school I could do basic DOM manipulation, and was just starting to look into PHP. My first year at college, I finally took two introductory programming courses, which filled me in on some core concepts, and one advanced course, building a ray-tracer in C++, which at the time, was one of the most challenging projects I had ever taken on. With this foundation, my interest and skills have only continued to grow. 
 			</section>
 			<section class="item">
-				<a href="#coSethToles" class="preview">
+				<a data-href="#coSethToles" class="preview coB">
 					<img class="thumb" src="images/thumbs/SethToles.jpg" />
-					<div class="previewDetails coB">
-						<h2 class="itemTitle">SethToles.com</h2>
+					<div class="previewDetails">
+						<h2>SethToles.com</h2>
 						<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;August&nbsp;2013)</h4>
-						<span class="previewDesc">
-							Though a lot of the work on this site went into graphics and content layout, which is discussed in the Graphic Design section, a fair bit of Javascript and relatively advanced CSS was required, both to make sure the design looked good across devices and to finesse various user interactions.
-						</span>
+						<div class="previewDesc">
+							This site required a fair bit of Javascript and relatively advanced CSS in order to achieve the look I was aiming for.
+						</div>
 					</div>
 				</a>
-				<section id="coSethToles" class="detail">
-					<h2 class="itemTitle">SethToles.com</h2>
-					<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;August&nbsp;2013)</h4>
+				<section id="coSethToles" class="detail coB">
+					<div>
+						<h2>SethToles.com</h2>
+						<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;August&nbsp;2013)</h4>
+					</div>
 					<p><a href="https://github.com/sethtoles/SethToles.com" target="_blank">View Source on GitHub</a></p>
 					<p>
-					Though a lot of the work on this site went into graphics and content layout, which is discussed in the Graphic Design section, a fair bit of Javascript and relatively advanced CSS was required, both to make sure the design looked good across devices and to finesse various user interactions. Further description coming soon...
+					This site required a fair bit of Javascript and relatively advanced CSS in order to achieve the look I was aiming for and to finesse various user interactions.
 					</p>
+					<p>The process of designing this site is discussed in the Graphic Design section.</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#coModfinder" class="preview">
+				<a data-href="#coModfinder" class="preview coB">
 					<img class="thumb" src="images/thumbs/coModfinder.jpg" />
-					<div class="previewDetails coB">
-						<h2 class="itemTitle">Modfinder</h2>
+					<div class="previewDetails">
+						<h2>Modfinder</h2>
 						<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;MySQL,&nbsp;March&nbsp;2013)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A collaborative project using node.js, aiming to help Hampshire students find compatible housemates.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="coModfinder" class="detail">
-					<h2 class="itemTitle">Modfinder</h2>
-					<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;MySQL,&nbsp;March&nbsp;2013)</h4>
+				<section id="coModfinder" class="detail coB">
+					<div>
+						<h2>Modfinder</h2>
+						<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;MySQL,&nbsp;March&nbsp;2013)</h4>
+					</div>
 					<p><a href="https://github.com/sethtoles/Modfinder" target="_blank">View Source on GitHub</a></p>
 					<p>
-					A collaborative project using node.js, aiming to help Hampshire students find compatible housemates. Further description coming soon...
+					A collaborative project using node.js, aiming to help Hampshire students find compatible housemates.
 					</p>
 					<img class="wide" src="images/full/coModfinder.jpg" />
 				</section>
 			</section>
 			<section class="item">
-				<a href="#coClimBot" class="preview">
-					<img class="thumb" src="images/thumbs/ClimBot.jpg" />
-					<div class="previewDetails coB">
-						<h2 class="itemTitle">ClimBot</h2>
-						<h4>(Clojure,&nbsp;January&nbsp;2013)</h4>
-						<span class="previewDesc">
-							Code for ClimBot. Electromechanical aspects discussed in Robotics section. 
-						</span>
-					</div>
-				</a>
-				<section id="coClimBot" class="detail">
-					<h2 class="itemTitle">ClimBot</h2>
-					<h4>(Clojure,&nbsp;January&nbsp;2013)</h4>
-					<p><a href="https://github.com/sethtoles/ClimBot" target="_blank">View Source on GitHub</a></p>
-					<img class="floatR" src="images/full/coClimBot.jpg" />
-					<p>
-					Code for ClimBot. Electromechanical aspects discussed in Robotics section. Further description coming soon...
-					</p>
-				</section>
-			</section>
-			<section class="item">
-				<a href="#coAudioPlayer" class="preview">
+				<a data-href="#coAudioPlayer" class="preview coB">
 					<img class="thumb" src="images/thumbs/coAudioPlayer.jpg" />
-					<div class="previewDetails coB">
-						<h2 class="itemTitle">Cybermonkey Studios Audio Player</h2>
+					<div class="previewDetails">
+						<h2>Cybermonkey Studios Audio Player</h2>
 						<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;October,&nbsp;2010)</h4>
-						<span class="previewDesc">
-							This audio player was my first real attempt at a web utility. It is probably the best example of my built-from-scratch approach to the Cybermonkey Studios site. More aspects of this site are discussed in the Graphic Design section.
-						</span>
+						<div class="previewDesc">
+							This audio player was my first real attempt at a web utility. It is probably the best example of my built-from-scratch approach to the Cybermonkey Studios site.
+						</div>
 					</div>
 				</a>
-				<section id="coAudioPlayer" class="detail">
-					<h2 class="itemTitle">Cybermonkey Studios Audio Player</h2>
-					<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;October&nbsp;2010)</h4>
+				<section id="coAudioPlayer" class="detail coB">
+					<div>
+						<h2>Cybermonkey Studios Audio Player</h2>
+						<h4>(Javascript,&nbsp;HTML,&nbsp;CSS,&nbsp;October&nbsp;2010)</h4>
+					</div>
 					<p><a href="code/audioPlayer/" target="_blank">Open Audio Player</a></p>
 					<p>
-					This simple audio player was my first real attempt at a web utility. It is probably the best example of my built-from-scratch approach to the Cybermonkey Studios site. More aspects of this site are discussed in the Graphic Design section. Further description coming soon...
+					This simple audio player was my first real attempt at a web utility. It is probably the best example of my built-from-scratch approach to the Cybermonkey Studios site.
 					</p>
+					<p>The design of this site is discussed in the Graphic Design section.</p>
 					<img class="wide" src="images/full/coAudioPlayer.jpg" />
 				</section>
 			</section>
 			<section class="item">
-				<a href="#coPolyGen" class="preview">
+				<a data-href="#coPolyGen" class="preview coB">
 					<img class="thumb" src="images/thumbs/coPolyGen.jpg" />
-					<div class="previewDetails coB">
-						<h2 class="itemTitle">PolyGen</h2>
+					<div class="previewDetails">
+						<h2>PolyGen</h2>
 						<h4>(Processing,&nbsp;October&nbsp;2009)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							This program was built to reproduce images using only randomly generated polygons. It was my part in a group project.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="coPolyGen" class="detail">
-					<h2 class="itemTitle">PolyGen</h2>
-					<h4>(Processing,&nbsp;October&nbsp;2009)</h4>
+				<section id="coPolyGen" class="detail coB">
+					<div>
+						<h2>PolyGen</h2>
+						<h4>(Processing,&nbsp;October&nbsp;2009)</h4>
+					</div>
 					<p><a href="https://github.com/sethtoles/PolyGen" target="_blank">View Source on GitHub</a></p>
 					<p>
 					This program was built to reproduce images using only randomly generated polygons. It was my part in a group project. Further description coming soon...
@@ -565,19 +568,21 @@
 				</section>
 			</section>
 			<section class="item">
-				<a href="#coSimpleDraw" class="preview">
+				<a data-href="#coSimpleDraw" class="preview coB">
 					<img class="thumb" src="images/thumbs/coSimpleDraw.jpg" />
-					<div class="previewDetails coB">
-						<h2 class="itemTitle">SimpleDraw</h2>
+					<div class="previewDetails">
+						<h2>SimpleDraw</h2>
 						<h4>(Processing,&nbsp;April&nbsp;2009)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							My first project in Processing, done for my second-ever programming class: a simple drawing program.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="coSimpleDraw" class="detail">
-					<h2 class="itemTitle">SimpleDraw</h2>
-					<h4>(Processing,&nbsp;April&nbsp;2009)</h4>
+				<section id="coSimpleDraw" class="detail coB">
+					<div>
+						<h2>SimpleDraw</h2>
+						<h4>(Processing,&nbsp;April&nbsp;2009)</h4>
+					</div>
 					<p><a href="https://github.com/sethtoles/SimpleDraw" target="_blank">View Source on GitHub</a></p>
 					<p>
 					My first project in Processing, done for my second-ever programming class: a simple drawing program. Further description coming soon...
@@ -588,113 +593,125 @@
 		</section>
 		<section class="category" id="ro">
 			<div id="roTitle" class="categoryTitle">Robotics</div>
-			<section class="catDesc">
-				If I had gone to any other college, I would probably have majored in either computer science, electrical engineering, or mechanical engineering. Instead I went to Hampshire College, which doesn't have majors at all, so I split my time between aspects of all three, ending my time there concentrating on robotics. This had its difficulties, as there was no robotics program at Hampshire, but ultimately the resources were available, and the atmosphere was incredibly supportive of self-driven learning. Robotics is still relatively new to me, but it provides exactly the kind of complex problem solving I'm always looking for, and I can't imagine a better application of my skills, than to a field which is I see as poised to massively improve quality of life for countless people.
+			<section class="catDesc roB">
+				If I had gone to any other college, I would probably have majored in either computer science, electrical engineering, or mechanical engineering. Instead I went to Hampshire College, which doesn't have majors at all, so I split my time between aspects of all three, ending my time there concentrating on Robotics. This had its difficulties, as there was no robotics program at Hampshire, but ultimately the resources were available, and the atmosphere was incredibly supportive of self-driven learning. Robotics is still relatively new to me, but it provides exactly the kind of complex problem solving I'm always looking for, and I can't imagine a better application of my skills, than to a field which is I see as poised to massively improve quality of life for countless people.
 			</section>
 			<section class="item">
-				<a href="#roClimBot" class="preview">
-					<img class="thumb" src="images/thumbs/ClimBot.jpg" />
-					<div class="previewDetails roB">
-						<h2 class="itemTitle">ClimBot</h2>
-						<h4>(Arduino,&nbsp;January&nbsp;2013)</h4>
-						<span class="previewDesc">
-							A robot which learns how to scale a special wall, using genetic programming. This was my senior project at Hampshire College. The code for this project is discussed in the Code section.
-						</span>
+				<a data-href="#roClimBot" class="preview roB roB">
+					<img class="thumb" src="images/thumbs/roClimBot.jpg" />
+					<div class="previewDetails">
+						<h2>ClimBot</h2>
+						<h4>(Arduino,&nbsp;Clojure,&nbsp;January&nbsp;2013)</h4>
+						<div class="previewDesc">
+							A robot which learns how to scale a special wall, using genetic programming, my senior project at Hampshire College.
+						</div>
 					</div>
 				</a>
-				<section id="roClimBot" class="detail">
-					<h2 class="itemTitle">ClimBot</h2>
-					<h4>(Arduino,&nbsp;January&nbsp;2013)</h4>
+				<section id="roClimBot" class="detail roB">
+					<div>
+						<h2>ClimBot</h2>
+						<h4>(Arduino,&nbsp;Clojure,&nbsp;January&nbsp;2013)</h4>
+					</div>
+					<p><a href="docs/climbot.pdf" target="_blank">Read my final documentation of this project (PDF)</a></p>
+					<p><a href="https://github.com/sethtoles/ClimBot" target="_blank">View Source on GitHub</a></p>
 					<p>
-					A robot which learns how to scale a special wall, using genetic programming. This was my senior project at Hampshire College. The code for this project is discussed in the Code section. Further description coming soon...
+					A robot which learns how to scale a special wall, using genetic programming. This was my senior project at Hampshire College.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#roMechAnole" class="preview">
+				<a data-href="#roMechAnole" class="preview roB">
 					<img class="thumb" src="images/thumbs/roMechAnole.jpg" />
-					<div class="previewDetails roB">
-						<h2 class="itemTitle">MechAnole</h2>
+					<div class="previewDetails">
+						<h2>MechAnole</h2>
 						<h4>(Arduino,&nbsp;June&nbsp;2011)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A collaborative project to build a robotic green anole model for studying anole behavior in the field.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="roMechAnole" class="detail">
-					<h2 class="itemTitle">MechAnole</h2>
-					<h4>(Arduino,&nbsp;June&nbsp;2011)</h4>
+				<section id="roMechAnole" class="detail roB">
+					<div>
+						<h2>MechAnole</h2>
+						<h4>(Arduino,&nbsp;June&nbsp;2011)</h4>
+					</div>
 					<p>
 					A collaborative project to build a robotic green anole model for studying anole behavior in the field. Further description coming soon...
 					</p>
+					<p><a href="mechanole/" target="_blank">More information in a website I built for the project</a></p>
 				</section>
 			</section>
 		</section>
 		<section class="category" id="id">
 			<div id="idTitle" class="categoryTitle">Industrial Design</div>
-			<section class="catDesc">
+			<section class="catDesc idB">
 				From the moment my father taught me to swing a hammer, learning new tools has come naturally to me, and I have rarely been at a loss in figuring out how to put something together. This comfort with craft has given me the opportunity to ask more important questions: instead of "How can this come together?" I ask, "How <i>should</i> this come together? What approach will be strongest, look the best, and most positively affect the end-product's usability?" As I gain skills and experience, these questions only become more apparent and important, but they have always been there, driving the process of everything I make.
 			</section>
 			<section class="item">
-				<a href="#idMonitorStand" class="preview">
+				<a data-href="#idMonitorStand" class="preview idB">
 					<img class="thumb" src="images/thumbs/idMonitorStand.jpg" />
-					<div class="previewDetails idB">
-						<h2 class="itemTitle">Monitor Stand</h2>
+					<div class="previewDetails">
+						<h2>Monitor Stand</h2>
 						<h4>(Steel,&nbsp;wood,&nbsp;May&nbsp;2013)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A custom monitor stand which allows for swiveling the screen into a vertical orientation.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="idMonitorStand" class="detail">
-					<h2 class="itemTitle">Monitor Stand</h2>
-					<h4>(Steel,&nbsp;wood,&nbsp;May&nbsp;2013)</h4>
+				<section id="idMonitorStand" class="detail idB">
+					<div>
+						<h2>Monitor Stand</h2>
+						<h4>(Steel,&nbsp;wood,&nbsp;May&nbsp;2013)</h4>
+					</div>
 					<img class="floatL" src="images/full/idMonitorStand.jpg" />
 					<p>
-					A custom monitor stand which allows for swiveling the screen into a vertical orientation. Further description coming soon...
+					A custom monitor stand which allows for swiveling the screen into a vertical orientation.
 					</p>
 					<img class="floatR" src="images/full/idMonitorStand-Front.jpg" />
-					<img class="floatL" src="images/full/idMonitorStand-Side.jpg" />
 				</section>
 			</section>
 			<section class="item">
-				<a href="#idLoftRoom" class="preview">
+				<a data-href="#idLoftRoom" class="preview idB">
 					<img class="thumb" src="images/thumbs/idLoftRoom.jpg" />
-					<div class="previewDetails idB">
-						<h2 class="itemTitle">Loft Room</h2>
+					<div class="previewDetails">
+						<h2>Loft Room</h2>
 						<h4>(Wood,&nbsp;September&nbsp;2010-May&nbsp;2011)</h4>
-						<span class="previewDesc">
-							When I was placed in a split-level room at Hampshire College, I took the opportunity to maximize the space for both getting work done and relaxing. To date, this is probably my favorite in a series of living-space modifications.
-						</span>
+						<div class="previewDesc">
+							Custom furniture designed to maximize productivity in a split-level room.
+						</div>
 					</div>
 				</a>
-				<section id="idLoftRoom" class="detail">
-					<h2 class="itemTitle">Loft Room</h2>
-					<h4>(Wood,&nbsp;September&nbsp;2010-May&nbsp;2011)</h4>
+				<section id="idLoftRoom" class="detail idB">
+					<div>
+						<h2>Loft Room</h2>
+						<h4>(Wood,&nbsp;September&nbsp;2010-May&nbsp;2011)</h4>
+					</div>
 					<img class="floatL" src="images/full/idLoftRoom.jpg" />
 					<p>
-					When I was placed in a split-level room at Hampshire College, I took the opportunity to maximize the space for both getting work done and relaxing. To date, this is probably my favorite in a series of living-space modifications. Further description coming soon...
+					When I was placed in a split-level room at Hampshire College, I took the opportunity to maximize the space for both getting work done and relaxing. To date, this is probably my favorite in a series of living-space modifications.
 					</p>
 					<img class="wide" src="images/full/idLoftRoom-Desks.jpg" />
 				</section>
 			</section>
 			<section class="item">
-				<a href="#idKitchenCounter" class="preview">
+				<a data-href="#idKitchenCounter" class="preview idB">
 					<img class="thumb" src="images/thumbs/idKitchenCounter.jpg" />
-					<div class="previewDetails idB">
-						<h2 class="itemTitle">Kitchen Counter</h2>
+					<div class="previewDetails">
+						<h2>Kitchen Counter</h2>
 						<h4>(Wood,&nbsp;September&nbsp;2010)</h4>
-						<span class="previewDesc">
-							A sorely needed extra surface and storage space in a tiny apartment's kitchen. Built to match the existing counters, without costing much.
-						</span>
+						<div class="previewDesc">
+							A sorely needed extra surface and storage space in a tiny apartment's kitchen, built to match the existing counters.
+						</div>
 					</div>
 				</a>
-				<section id="idKitchenCounter" class="detail">
-					<h2 class="itemTitle">Kitchen Counter</h2>
-					<h4>(Wood,&nbsp;September&nbsp;2010)</h4>
+				<section id="idKitchenCounter" class="detail idB">
+					<div>
+						<h2>Kitchen Counter</h2>
+						<h4>(Wood,&nbsp;September&nbsp;2010)</h4>
+					</div>
 					<img class="floatL" src="images/full/idKitchenCounter.jpg" />
 					<p>
-					A sorely needed extra surface and storage space in a tiny apartment's kitchen. Built to match the existing counters, without costing much. Further description coming soon...
+					A sorely needed extra surface and storage space in a tiny apartment's kitchen. Built to match the existing counters, without costing much.
 					</p>
 					<img class="floatR" src="images/full/idKitchenCounter-Back.jpg" />
 					<img class="wide" src="images/full/idKitchenCounter-Drawers.jpg" />
@@ -703,225 +720,237 @@
 		</section>
 		<section class="category" id="sc">
 			<div id="scTitle" class="categoryTitle">Sculpture</div>
-			<section class="catDesc">
+			<section class="catDesc scB">
 				While most of the things I make these days are designed to serve a function, I still feel inclined to make the occasional piece that exists only for its own sake. I would not say I've made anything that has an intended "meaning," but instead I find an undeniable satisfaction in creating something that's simply nice to look at and have around. It's not a particularly noble goal, but this is what drives my sculpture. Despite the very spacial and visual way I have of experiencing the world, I have never found sculpture an effective outlet for emotion, or conveying a message. Instead, it is a sort of meditation, or in some cases, a puzzle, but one whose solution can only be reached by organic evolution. 
 			</section>
 			<section class="item">
-				<a href="#scSelfPortrait" class="preview">
+				<a data-href="#scSelfPortrait" class="preview scB">
 					<img class="thumb" src="images/thumbs/scSelfPortrait.jpg" />
-					<div class="previewDetails scB">
-						<h2 class="itemTitle">Self-Portrait</h2>
+					<div class="previewDetails">
+						<h2>Self-Portrait</h2>
 						<h4>(Cardboard,&nbsp;January&nbsp;2011)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A life size portrait of myself made from many strips of corrugated cardboard.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="scSelfPortrait" class="detail">
-					<h2 class="itemTitle">Self-Portrait</h2>
-					<h4>(Cardboard,&nbsp;January&nbsp;2011)</h4>
-					<img class="wide" src="images/full/scSelfPortrait.jpg" />
+				<section id="scSelfPortrait" class="detail scB">
+					<div>
+						<img class="wide" src="images/full/scSelfPortrait.jpg" />
+						<h2>Self-Portrait</h2>
+						<h4>(Cardboard,&nbsp;January&nbsp;2011)</h4>
+					</div>
 					<p>
-					A life size portrait of myself made from many strips of corrugated cardboard. Further description coming soon...
+					A life size portrait of myself made from many strips of corrugated cardboard.
 					</p>
 					<img class="floatL" src="images/full/scSelfPortrait-Close.jpg" />
 				</section>
 			</section>
 			<section class="item">
-				<a href="#scMerryGoRound" class="preview">
+				<a data-href="#scMerryGoRound" class="preview scB">
 					<img class="thumb" src="images/thumbs/scMerryGoRound.jpg" />
-					<div class="previewDetails scB">
-						<h2 class="itemTitle">Merry-Go-Round</h2>
+					<div class="previewDetails">
+						<h2>Merry-Go-Round</h2>
 						<h4>(Steel&nbsp;rod,&nbsp;February&nbsp;2009)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							I small kinetic sculpture of three happy friends enjoying the sight of a Merry-Go-Round.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="scMerryGoRound" class="detail">
-					<h2 class="itemTitle">Merry-Go-Round</h2>
-					<h4>(Steel&nbsp;rod,&nbsp;February&nbsp;2009)</h4>
+				<section id="scMerryGoRound" class="detail scB">
+					<div>
+						<h2>Merry-Go-Round</h2>
+						<h4>(Steel&nbsp;rod,&nbsp;February&nbsp;2009)</h4>
+					</div>
 					<img class="floatL" src="images/full/scMerryGoRound.jpg" />
 					<p>
-					I small kinetic sculpture of three happy friends enjoying the sight of a Merry-Go-Round. Further description coming soon...
+					I small kinetic sculpture of three happy friends enjoying the sight of a Merry-Go-Round.
 					</p>
 					<div class="embedContainer embedVGA">
-						<iframe src="http://player.vimeo.com/video/73421434" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http://player.vimeo.com/video/73421434?title=0&byline=0&portrait=0&api=1&color=9C4CBC" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#scClayBowls" class="preview">
+				<a data-href="#scClayBowls" class="preview scB">
 					<img class="thumb" src="images/thumbs/scClayBowls.jpg" />
-					<div class="previewDetails scB">
-						<h2 class="itemTitle">Clay Bowls</h2>
+					<div class="previewDetails">
+						<h2>Clay Bowls</h2>
 						<h4>(Stoneware&nbsp;clay,&nbsp;October&nbsp;2007)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							Three clay bowls thrown in a sculpture class in high school.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="scClayBowls" class="detail">
-					<h2 class="itemTitle">Clay Bowls</h2>
-					<h4>(Stoneware&nbsp;clay,&nbsp;October&nbsp;2007)</h4>
+				<section id="scClayBowls" class="detail scB">
 					<img class="wide" src="images/full/scClayBowls.jpg" />
+					<div>
+						<h2>Clay Bowls</h2>
+						<h4>(Stoneware&nbsp;clay,&nbsp;October&nbsp;2007)</h4>
+					</div>
 					<p>
-					Three clay bowls thrown in a sculpture class in high school. Further description coming soon...
+					Three clay bowls thrown in a sculpture class in high school.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#scDino" class="preview">
+				<a data-href="#scDino" class="preview scB">
 					<img class="thumb" src="images/thumbs/scDino.jpg" />
-					<div class="previewDetails scB">
-						<h2 class="itemTitle">"Dino"</h2>
+					<div class="previewDetails">
+						<h2>"Dino"</h2>
 						<h4>(PVC,&nbsp;foam,&nbsp;April&nbsp;2007)</h4>
-						<span class="previewDesc">
-							My largest sculpture, a 16 foot long T-Rex skeleton marionette, which was built for a dance number in my high school's production of "On the Town."
-						</span>
+						<div class="previewDesc">
+							My largest sculpture, a 16 foot long T-Rex skeleton marionette, built for a production of "On the Town."
+						</div>
 					</div>
 				</a>
-				<section id="scDino" class="detail">
-					<h2 class="itemTitle">"Dino"</h2>
-					<h4>(PVC,&nbsp;foam,&nbsp;April&nbsp;2007)</h4>
+				<section id="scDino" class="detail scB">
 					<img class="wide" src="images/full/scDino.jpg" />
+					<div>
+						<h2>"Dino"</h2>
+						<h4>(PVC,&nbsp;foam,&nbsp;April&nbsp;2007)</h4>
+					</div>
 					<p>
-					My largest sculpture, a 16 foot long T-Rex skeleton marionette, which was built for a dance number in my high school's production of "On the Town." Further description coming soon...
+					My largest sculpture, a 16 foot long T-Rex skeleton marionette, which was built for a dance number in my high school's production of "On the Town."
 					</p>
 					<img class="wide" src="images/full/scDino-Construction.jpg" />
 				</section>
 			</section>
 			<section class="item">
-				<a href="#scPaperClipAnimals" class="preview">
+				<a data-href="#scPaperClipAnimals" class="preview scB">
 					<img class="thumb" src="images/thumbs/scPaperClipAnimals.jpg" />
-					<div class="previewDetails scB">
-						<h2 class="itemTitle">Paper Clip Animals</h2>
+					<div class="previewDetails">
+						<h2>Paper Clip Animals</h2>
 						<h4>(Paper&nbsp;clips,&nbsp;Late&nbsp;2005)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							Two of the many little creatures I made from hundreds of paper clips, straightened out and then twisted together.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="scPaperClipAnimals" class="detail">
-					<h2 class="itemTitle">Paper Clip Animals</h2>
-					<h4>(Paper&nbsp;clips,&nbsp;Late&nbsp;2005)</h4>
+				<section id="scPaperClipAnimals" class="detail scB">
 					<img class="wide" src="images/full/scPaperClipAnimals.jpg" />
+					<div>
+						<h2>Paper Clip Animals</h2>
+						<h4>(Paper&nbsp;clips,&nbsp;Late&nbsp;2005)</h4>
+					</div>
 					<p>
-					Two of the many little creatures I made from hundreds of paper clips, straightened out and then twisted together. Further description coming soon...
+					Two of the many little creatures I made from hundreds of paper clips, straightened out and then twisted together.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#scBinderClipCow" class="preview">
+				<a data-href="#scBinderClipCow" class="preview scB">
 					<img class="thumb" src="images/thumbs/scBinderClipCow.jpg" />
-					<div class="previewDetails scB">
-						<h2 class="itemTitle">Binder Clip Cow</h2>
+					<div class="previewDetails">
+						<h2>Binder Clip Cow</h2>
 						<h4>(Binder&nbsp;clips,&nbsp;Early&nbsp;2005)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A cute little cow I discovered while playing around with the many ways I could combing two binder clips.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="scBinderClipCow" class="detail">
-					<h2 class="itemTitle">Binder Clip Cow</h2>
-					<h4>(Binder&nbsp;clips,&nbsp;Early&nbsp;2005)</h4>
+				<section id="scBinderClipCow" class="detail scB">
 					<img class="wide" src="images/full/scBinderClipCow.jpg" />
+					<div>
+						<h2>Binder Clip Cow</h2>
+						<h4>(Binder&nbsp;clips,&nbsp;Early&nbsp;2005)</h4>
+					</div>
 					<p>
-					A cute little cow I discovered while playing around with the many ways I could combing two binder clips. Further description coming soon...
+					A cute little cow I discovered while playing around with the many ways I could combing two binder clips.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#scLayeredBowl" class="preview">
+				<a data-href="#scLayeredBowl" class="preview scB">
 					<img class="thumb" src="images/thumbs/scLayeredBowl.jpg" />
-					<div class="previewDetails scB">
-						<h2 class="itemTitle">Layered Bowl</h2>
+					<div class="previewDetails">
+						<h2>Layered Bowl</h2>
 						<h4>(Stoneware&nbsp;clay,&nbsp;Late&nbsp;2003)</h4>
-						<span class="previewDesc">
+						<div class="previewDesc">
 							A bowl made in my first ceramics class in 7th grade.
-						</span>
+						</div>
 					</div>
 				</a>
-				<section id="scLayeredBowl" class="detail">
-					<h2 class="itemTitle">Layered Bowl</h2>
-					<h4>(Stoneware&nbsp;clay,&nbsp;Late&nbsp;2003)</h4>
+				<section id="scLayeredBowl" class="detail scB">
 					<img class="wide" src="images/full/scLayeredBowl.jpg" />
+						<h2>Layered Bowl</h2>
+						<h4>(Stoneware&nbsp;clay,&nbsp;Late&nbsp;2003)</h4>
 					<p>
-					A bowl made in my first ceramics class in 7th grade. Further description coming soon...
+					A bowl made in my first ceramics class in 7th grade.
 					</p>
 				</section>
 			</section>
 		</section>
 		<section class="category" id="ck">
 			<div id="ckTitle" class="categoryTitle">Cooking</div>
-			<section class="catDesc">
-				Although I only started cooking for myself about two years ago, in that short time it has become hugely important to me. Other than simple standbys, I try to avoid making the same dish twice, I cook across multiple cuisines, and go out of my way to make as much of the meal from scratch as I can, just to get a better sense of all the ingredients. When I found myself spending more time on every meal, I started taking pictures to track my progression, and in building this site, I wanted to present cooking as a significant part of my life. The projects in other sections may have taken days, weeks, or months to complete, whereas even a complex meal may only take a few hours, so to save space, I've listed meals by category rather than individually.
+			<section class="catDesc ckB">
+				Although I only started cooking for myself about two years ago, in that short time it has become hugely important to me. Other than simple standbys, I try to avoid making the same dish often, I cook across multiple cuisines, and go out of my way to make as much of the meal from scratch as I can, just to get a better sense of all the ingredients. When I found myself spending more time on every meal, I started taking pictures to track my progression, and in building this site, I wanted to present cooking as a significant part of my life.
 			</section>
 			<section class="item">
-				<a href="#ckBread" class="preview">
+				<a data-href="#ckBread" class="preview ckB">
 					<img class="thumb" src="images/thumbs/ckBread.jpg" />
-					<div class="previewDetails ckB">
-						<h2 class="itemTitle">Bread</h2>
-						<span class="previewDesc">
-							My experience with baking is still minimal, but there are few things as amazing as a fresh baked loaf of bread.
-						</span>
+					<div class="previewDetails">
+						<h2>Bread</h2>
+						<div class="previewDesc">
+							Though new to me, baking a good loaf of bread is immensely satisfying.
+						</div>
 					</div>
 				</a>
-				<section id="ckBread" class="detail">
-					<h2 class="itemTitle">Bread</h2>
+				<section id="ckBread" class="detail ckB">
+					<h2>Bread</h2>
 					<p>
-					My experience with baking is still minimal, but there are few things as amazing as a fresh baked loaf of bread. Further description coming soon...
+					My experience with baking is still minimal, but there are few things as amazing as a fresh baked loaf of bread.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#ckPizza" class="preview">
+				<a data-href="#ckPizza" class="preview ckB">
 					<img class="thumb" src="images/thumbs/ckPizza.jpg" />
-					<div class="previewDetails ckB">
-						<h2 class="itemTitle">Pizza</h2>
-						<span class="previewDesc">
-							Mmm... pizza.
-						</span>
+					<div class="previewDetails">
+						<h2>Pizza</h2>
+						<div class="previewDesc">
+							A homemade dough and sauce take time, but the product is worth the effort.
+						</div>
 					</div>
 				</a>
-				<section id="ckPizza" class="detail">
-					<h2 class="itemTitle">Pizza</h2>
+				<section id="ckPizza" class="detail ckB">
+					<h2>Pizza</h2>
 					<p>
-					Mmm... pizza. Further description coming soon...
+					A homemade dough and sauce take time, but the product is worth the effort.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#ckSeafood" class="preview">
+				<a data-href="#ckSeafood" class="preview ckB">
 					<img class="thumb" src="images/thumbs/ckSeafood.jpg" />
-					<div class="previewDetails ckB">
-						<h2 class="itemTitle">Seafood</h2>
-						<span class="previewDesc">
-							Simple execution, infinite possibility.
-						</span>
+					<div class="previewDetails">
+						<h2>Seafood</h2>
+						<div class="previewDesc">
+							I cook seafood less often than other proteins, but it contains some of my favorites.
+						</div>
 					</div>
 				</a>
-				<section id="ckSeafood" class="detail">
-					<h2 class="itemTitle">Seafood</h2>
+				<section id="ckSeafood" class="detail ckB">
+					<h2>Seafood</h2>
 					<p>
-					Simple execution, infinite possibility. Further description coming soon...
+					I cook seafood less often than other proteins, but it contains some of my favorites.
 					</p>
 				</section>
 			</section>
 			<section class="item">
-				<a href="#ckStirFry" class="preview">
+				<a data-href="#ckStirFry" class="preview ckB">
 					<img class="thumb" src="images/thumbs/ckStirFry.jpg" />
-					<div class="previewDetails ckB">
-						<h2 class="itemTitle">Stir Fry</h2>
-						<span class="previewDesc">
-							Simple execution, infinite possibility.
-						</span>
+					<div class="previewDetails">
+						<h2>Stir Fry</h2>
+						<div class="previewDesc">
+							Though straightforward in execution, the stir fry provides infinite possibility.
+						</div>
 					</div>
 				</a>
-				<section id="ckStirFry" class="detail">
-					<h2 class="itemTitle">Stir Fry</h2>
+				<section id="ckStirFry" class="detail ckB">
+					<h2>Stir Fry</h2>
 					<p>
-					Simple execution, infinite possibility. Further description coming soon...
+					Though straightforward in execution, the stir fry provides infinite possibility.
 					</p>
 				</section>
 			</section>
@@ -931,49 +960,49 @@
 	<div id="splashSpacer"></div>
 	<section id="splash">
 		<div class="icon" id="icon1">
-			<a class="scroll" href="#ilTitle">
+			<a class="scroll" data-href="#ilTitle">
 				<img class="iconText" src="images/ilt.svg" />
 				<img src="images/ili.svg" />
 			</a>
 		</div>
 		<div class="icon" id="icon2">
-			<a class="scroll" href="#vaTitle">
+			<a class="scroll" data-href="#vaTitle">
 				<img class="iconText" src="images/vat.svg" />
 				<img src="images/vai.svg" />
 			</a>
 		</div>
 		<div class="icon" id="icon3">
-			<a class="scroll" href="#gdTitle">
+			<a class="scroll" data-href="#gdTitle">
 				<img class="iconText" src="images/gdt.svg" />
 				<img src="images/gdi.svg" />
 			</a>
 		</div>
 		<div class="icon" id="icon4">
-			<a class="scroll" href="#coTitle">
+			<a class="scroll" data-href="#coTitle">
 				<img class="iconText" src="images/cot.svg" />
 				<img src="images/coi.svg" />
 			</a>
 		</div>
 		<div class="icon" id="icon5">
-			<a class="scroll" href="#roTitle">
+			<a class="scroll" data-href="#roTitle">
 				<img class="iconText" src="images/rot.svg" />
 				<img src="images/roi.svg" />
 			</a>
 		</div>
 		<div class="icon" id="icon6">
-			<a class="scroll" href="#idTitle">
+			<a class="scroll" data-href="#idTitle">
 				<img class="iconText" src="images/idt.svg" />
 				<img src="images/idi.svg" />
 			</a>
 		</div>
 		<div class="icon" id="icon7">
-			<a class="scroll" href="#scTitle">
+			<a class="scroll" data-href="#scTitle">
 				<img class="iconText" src="images/sct.svg" />
 				<img src="images/sci.svg" />
 			</a>
 		</div>
 		<div class="icon" id="icon8">
-			<a class="scroll" href="#ckTitle">
+			<a class="scroll" data-href="#ckTitle">
 				<img class="iconText" src="images/ckt.svg" />
 				<img src="images/cki.svg" />
 			</a>

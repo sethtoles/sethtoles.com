@@ -1,24 +1,19 @@
 var $root = $("html, body"),
 	$window = $(window),
 	$oldDetail = null,
-	transform = (typeof(document.body.style.webkitTransform)) ? "-webkit-transform" : (typeof(document.body.style.msTransform)) ? "-ms-transform" : "transform";
+	scrollLock = null;
 
 function sizeWatch(){
 	var	winHeight = $window.height(),
 		winWidth = $window.width(),
 		winRatio = winWidth/winHeight,
 		maxSplHeight = winWidth/1.647,
-		rbc = $("a.rowButtonCurrent")[0],
-		$splash = $("#splash").height((winRatio < 1.647) ? winHeight : maxSplHeight + ((winHeight - maxSplHeight) * 0.35));
-	$("div.icon").css({"width": ((winRatio < 1.2) ? "14%" : (.168 * winHeight)), "top": ((winRatio < 1.647) ? "" : (.6 * maxSplHeight) + "px")
-	});
+		$rbc = $("a.rowButtonCurrent");
+	$("#splash").height((winRatio < 1.647) ? winHeight : maxSplHeight + ((winHeight - maxSplHeight) * 0.35));
+	$("div.icon").css({"width": ((winRatio < 1.2) ? "14%" : (.168 * winHeight)), "top": ((winRatio < 1.647) ? "" : (.6 * maxSplHeight) + "px")});
 	$("#splashSpacer").height(winHeight);
 	if($("#dcBox:visible")[0]){dcBoxPosition();}
-	if(rbc){
-		$("#overlay").css({transform: "translate(0,-" + $($.attr(rbc, "href")).outerHeight() + "px)"});
-		contentRowHeight();
-	}
-	//window.scrollTo(0, $("#splashSpacer").offset().top);
+	if($rbc){sizeOverlay($($rbc.attr("data-href")), true);}
 }
 
 function scrollWatch(){
@@ -73,14 +68,23 @@ function dcBoxPosition(fixed, cb){
 	}
 }
 
-function contentRowHeight(){
-	$("#resume, #about, #hire").css({"max-height": $window.height() - $("#buttonRow").height() + "px"});
+function sizeOverlay($current, resizing){
+	if(resizing){$("#overlay").css({"transition-property": "none"});}
+	$current.css({"overflow-y": "visible", "max-height": ""});
+	var maxHeight = $window.height() - $("#buttonRow").height(),
+		height = $current.height();
+	$current.css({"overflow-y": (height > maxHeight) ? "scroll" : "visible", "max-height": maxHeight + "px"});
+	$("#overlay").css({"transform": "translate(0,-" + Math.min(height, maxHeight) + "px)", "transition-property": ""});
 }
 
 function scrollToDetail($newDetail, $oldPreview){
 	var $prev = $newDetail.parent().prev(),
 		y = $prev.offset().top + $prev.outerHeight();
 	if($oldDetail){
+		$video = $($oldDetail).find("iframe");
+		if($video[0]){
+			$video[0].contentWindow.postMessage('{"method": "pause"}', $video.attr('src').split('?')[0]);
+		}
 		if($oldDetail == $newDetail){
 			$newDetail = null;
 			y = Math.min(y, $window.scrollTop());
@@ -89,78 +93,87 @@ function scrollToDetail($newDetail, $oldPreview){
 		}
 		$oldDetail.slideUp(800).prev().slideDown(800);
 	}
-	$oldDetail = $newDetail;
 	$root.animate({scrollTop: y}, 800);
+	return $newDetail;
 }
 
-var cLocSaver = (function(){
-	var timer = 0;
-	return function(callback, ms){
-		clearTimeout(timer);
-		timer = setTimeout(callback, ms);
-	};
-}());
+function checkURL(){
+	var hash = window.location.hash;
+	if(hash){
+		var $hash = $(hash);
+		if($hash.hasClass("detail")){
+			$oldDetail = scrollToDetail($hash, $hash.prev().hide()).show();
+			dcBoxPosition(true, function(){$("#dcBox").show();});
+		}else{
+			alert("You have tried to load a nonexistent item: " + hash + ".\nLet's continue like this never happened...");
+			window.scrollTo(0, $("#splashSpacer").offset().top);
+		}
+	}else{
+		window.scrollTo(0, $("#splashSpacer").offset().top);
+	}
+}
 		
 $(document).ready(function(){
+	$("#curtain").text("Loading...");
 	sizeWatch();
 	scrollWatch();
-	$("#email").text("sethtoles@gmail.com");
+	$("#email").text("sethtoles@gmail.com").attr("href", "mailto:sethtoles@gmail.com");
 	$("#cell").text("(202) 494-7456");
 	$window.resize(function(){sizeWatch()});
 	$(document).scroll(scrollWatch);
-	$("a.scroll").click(function(e){
-			$target = $($.attr(this, "href"));
+	$("a.scroll").click(function(){
+			$target = $($.attr(this, "data-href"));
 			$root.animate({
 	        scrollTop: $target.offset().top - $target.height()/3.3
 	    }, 800);
-		e.preventDefault();
 	});
-	$("a.rowButton").click(function(e){
-		if(!$(this).hasClass("rowButtonCurrent")){
-			contentRowHeight(); //MOVE THIS TO EVENT AFTER RESIZE!!
+	$("a.rowButton").click(function(){
+		var $this = $(this);
+		if(!$this.hasClass("rowButtonCurrent")){
 			var rbc = $("a.rowButtonCurrent")[0];
+				href = $this.attr("data-href"),
+				move = (href == "#resume") ? 0 : (href == "#about") ? -33.333 : -66.666;
 			if(rbc){
-				var animate = true;
 				$(rbc).removeClass("rowButtonCurrent");
+				$("#contentRow").css({"transform": "translate(" + move + "%, 0)"});
+			}else{
+				$("#dimmer").addClass("dim");
+				scrollLock = $window.scrollTop();
+				$window.scroll(function(){$window.scrollTop(scrollLock);});
+				$("#contentRow").css({"transform": "translate(" + move + "%, 0)"}).show();
 			}
-			$("#dimmer").addClass("dim");
-			var $this = $(this).addClass("rowButtonCurrent"),
-				href = $this.attr("href"),
-				move = (href == "#resume") ? 0 : (href == "#about") ? -33.333 : -66.666,
-				winHeight = $window.height();
-			animate ? $("#contentRow").css({transform: "translate(" + move + "%, 0)"}) : $("#contentRow").css({transform: "translate(" + move + "%, 0)"}).show();
-			$("#overlay").css({transform: "translate(0,-" + $(href).outerHeight() + "px)"});
+			$this.addClass("rowButtonCurrent");
+			sizeOverlay($(href));
 		}
-		e.preventDefault();
 	});
 	$(".close, #dimmer").click(function(e){
 		$("#dimmer").removeClass("dim");
+		scrollLock = null;
+		$window.off("scroll");
 		$("a.rowButtonCurrent").removeClass("rowButtonCurrent");
-		$("#overlay").css({transform: "translate(0,0)"});
+		$("#overlay").css({"transform": "translate(0,0)"});
 		setTimeout(function(){$("#contentRow").hide();}, 800);
-		e.preventDefault();
 		e.stopPropagation();
 	});
-	$(".preview").click(function(e){
+	$(".preview").click(function(){
 		var $this = $(this),
-			$detail = $($this.attr("href")).slideDown(800);
-		scrollToDetail($detail, $this);
+			$detail = $($this.attr("data-href")).slideDown(800);
+		$oldDetail = scrollToDetail($detail, $this);
 		$this.slideUp(800);
 		$("#dcBox").fadeOut(800, function(){
 			dcBoxPosition(true, function(){
 				$("#dcBox").fadeIn(800);
 			})
 		});
-		e.preventDefault();
 	});
 	$("#dcBox").click(function(){
-		scrollToDetail($oldDetail);
+		$oldDetail = scrollToDetail($oldDetail);
 		$(this).fadeOut(600);
 	});
-	$('<img/>').attr('src', 'images/splash.jpg').load(function() {
+	$("<img/>").attr("src", "images/splash.jpg").load(function() {
 		$(this).remove();
-		$('#splash').css('background-image', 'url(images/splash.jpg)');
-		window.scrollTo(0, $("#splashSpacer").offset().top);
+		$("#splash").css("background-image", "url(images/splash.jpg)");
+		checkURL();
 		$("#curtain").text("").fadeOut(1000);
 	});
 });

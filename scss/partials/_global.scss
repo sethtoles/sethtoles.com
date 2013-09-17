@@ -1,16 +1,14 @@
 html {
-	background-color: #103368;
+	background-color: $back;
 }
 
 html, body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 62.5%;
-	-webkit-font-smoothing: antialiased;
-	//font smoothing is webkit only :(
 	margin: 0;
 	padding: 0;
 	position: relative;
-	color:	#151515;
+	color:	$text;
 }
 
 h1 {
@@ -21,8 +19,9 @@ h1 {
 
 h2 {
 	font-size: 1.3em;
-	margin: .2em .5em .1em 0;
+	margin: .2em 0 .1em .38em;
 	font-weight: 600;
+	display: inline-block;
 }
 
 h3 {
@@ -33,8 +32,13 @@ h3 {
 
 h4 {
 	font-size: 1.1em;
-	margin: 0.4em 0 0.2em 0;
+	margin: 0 0 0.2em .45em;
 	font-weight: 400;
+	display: inline-block;
+}
+
+.previewDetails>h4 {
+	display: block;
 }
 
 h5 {
@@ -53,15 +57,11 @@ a {
 }
 
 a:link {
-	color: #335489;
+	color: $link;
 }
 
 a:visited {
-	color: #335489;
-}
-
-a:hover {
-	color: #5B91CA;
+	color: $visited;
 }
 
 img	{

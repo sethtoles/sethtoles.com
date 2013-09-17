@@ -1,21 +1,49 @@
 /*	CSS Design by Seth Toles for sethtoles.com */
 
 @mixin transition($arguments...) {
-	transition: $arguments;
 	-webkit-transition: $arguments;
+	transition: $arguments;
 }
 
 @mixin transition-transform($arguments...) {
-	transition: transform $arguments;
 	transition: -ms-transform $arguments;
 	-webkit-transition: -webkit-transform $arguments;
+	transition: transform $arguments;
 }
 
 @mixin transform($arguments...) {
-	transform: $arguments;
 	-webkit-transform: $arguments;
 	-ms-transform: $arguments;
+	transform: $arguments;
 }
+
+$back : #103368;
+
+$main : #F8FAFD; $mainDark : #F0F3F7;
+
+$text : #151515; $link : #3289D4; $visited : #9C4CBC;
+
+$sBar : #051B3C; $sBarCur : #0B2B5C; $sBarHov : #224579;
+
+$overlay : white;
+
+$overlayButton : #0C1222; $overlayButtonHov : #121F33; $overlayButtonCur : $overlay;
+$overlayText : #97ABCE; $overlayTextHov : $overlay; $overlayTextCur : $overlayButton;
+
+$grey : #E5E9EE;
+
+$close : $grey; $closeHov : #97ABCE;
+
+$previewHov : $grey;
+
+$il : #FFE666; $ilDark : #D4B51D; $ilMed : #FFED8F; $ilLight : #FFF3B2;
+$va : #4ACAA8; $vaDark : #229072; $vaMed : #50D6B2; $vaLight : #60E4C1;
+$gd : #E05EA9; $gdDark : #94336B; $gdMed : #E86DB4; $gdLight : #FD7FC8;
+$co : #54A6ED; $coDark : #236AA8; $coMed : #5FB3FB; $coLight : #76C0FF;
+$ro : #4BBD61; $roDark : #2A7A39; $roMed : #52CC68; $roLight : #71E587;
+$id : #FBA03A; $idDark : #9F5D12; $idMed : #FFB057; $idLight : #FFC17A;
+$sc : #9C4CBC; $scDark : #6C2389; $scMed : #AA55CC; $scLight : #C06FE1;
+$ck : #D9524D; $ckDark : #9A2F2B; $ckMed : #F15C57; $ckLight : #F97974;
 
 @import "partials/global";
 @import "partials/overlay";

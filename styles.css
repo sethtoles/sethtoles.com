@@ -5,7 +5,6 @@ html {
 html, body {
   font-family: 'Raleway', sans-serif;
   font-size: 62.5%;
-  -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
   position: relative;
@@ -18,8 +17,9 @@ h1 {
 
 h2 {
   font-size: 1.3em;
-  margin: .2em .5em .1em 0;
-  font-weight: 600; }
+  margin: .2em 0 .1em .38em;
+  font-weight: 600;
+  display: inline-block; }
 
 h3 {
   font-size: 1em;
@@ -28,8 +28,12 @@ h3 {
 
 h4 {
   font-size: 1.1em;
-  margin: 0.4em 0 0.2em 0;
-  font-weight: 400; }
+  margin: 0 0 0.2em .45em;
+  font-weight: 400;
+  display: inline-block; }
+
+.previewDetails > h4 {
+  display: block; }
 
 h5 {
   font-size: .9em;
@@ -44,13 +48,10 @@ a {
   text-decoration: none; }
 
 a:link {
-  color: #335489; }
+  color: #3289d4; }
 
 a:visited {
-  color: #335489; }
-
-a:hover {
-  color: #5B91CA; }
+  color: #9c4cbc; }
 
 img {
   border: none; }
@@ -79,31 +80,34 @@ ul {
   top: 100%;
   z-index: 99;
   font-size: 2.4em;
-  background-color: #ffffff;
-  transition: transform 1s ease 0;
-  transition: -ms-transform 1s ease 0;
-  -webkit-transition: -webkit-transform 1s ease 0; }
+  background-color: white;
+  transition: -ms-transform 1s ease;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease; }
 
 #dimmer {
   position: fixed;
-  width: 100%;
-  height: 0%;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: black;
   z-index: 98;
-  transition: opacity 0.8s ease;
-  -webkit-transition: opacity 0.8s ease; }
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s 0.8s, opacity 0.8s linear;
+  transition: visibility 0s 0.8s, opacity 0.8s linear; }
 
 #dimmer.dim {
-  height: 100%;
-  opacity: 1; }
+  visibility: visible;
+  opacity: .3;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease; }
 
 #buttonRow {
   position: absolute;
   width: 100%;
   height: 3.25em;
   margin-top: -3.25em;
-  background-color: #0C1222;
+  background-color: #0c1222;
   text-align: center; }
 
 a.rowButton {
@@ -111,18 +115,18 @@ a.rowButton {
   padding-right: 1%;
   float: left;
   font-size: 1.5em;
-  background-color: #0C1222;
-  color: #97ABCE;
-  transition: background-color 0.5s ease, color 0.5s ease;
-  -webkit-transition: background-color 0.5s ease, color 0.5s ease; }
+  background-color: #0c1222;
+  color: #97abce;
+  -webkit-transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease; }
 
 a.rowButton:hover {
-  color: #ffffff;
-  background-color: #121F33; }
+  color: white;
+  background-color: #121f33; }
 
 a.rowButtonCurrent, a.rowButtonCurrent:hover {
-  color: #0C1222;
-  background-color: #ffffff; }
+  color: #0c1222;
+  background-color: white; }
 
 #resumeTitle, #aboutTitle, #hireTitle {
   width: 80%;
@@ -141,15 +145,15 @@ a.rowButtonCurrent, a.rowButtonCurrent:hover {
   height: 0;
   width: 100%;
   margin-top: -50%;
-  transition: opacity 0.5s ease;
-  -webkit-transition: opacity 0.5s ease; }
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease; }
 
 .closeCircle {
-  transition: fill 0.5s ease;
-  -webkit-transition: fill 0.5s ease; }
+  -webkit-transition: fill 0.5s ease;
+  transition: fill 0.5s ease; }
 
 .close:hover > .closeCircle {
-  fill: #97ABCE; }
+  fill: #97abce; }
 
 .rowButtonCurrent .close {
   opacity: 1;
@@ -158,17 +162,16 @@ a.rowButtonCurrent, a.rowButtonCurrent:hover {
 #contentRow {
   position: absolute;
   width: 300%;
-  background-color: #ffffff;
+  background-color: white;
   display: none;
-  transition: transform 1s ease;
   transition: -ms-transform 1s ease;
-  -webkit-transition: -webkit-transform 1s ease; }
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease; }
 
 #resume, #about, #hire {
   float: left;
   width: 23.33%;
-  padding: 0 5%;
-  overflow: hidden; }
+  padding: 0 5%; }
 
 #about {
   text-align: center; }
@@ -182,7 +185,7 @@ a.rowButtonCurrent, a.rowButtonCurrent:hover {
 
 /* ----- SIDEBAR ----- */
 #sidebar {
-  background-color: #051B3C;
+  background-color: #051b3c;
   padding: 0;
   margin: .4em 0 1em 0;
   position: absolute;
@@ -195,42 +198,42 @@ a.rowButtonCurrent, a.rowButtonCurrent:hover {
   white-space: nowrap;
   text-overflow: ellipsis;
   height: 2em;
-  transition: background-color 0.5s ease;
-  -webkit-transition: background-color 0.5s ease; }
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease; }
 
 #sidebar li:hover {
-  background-color: #103368; }
+  background-color: #224579; }
 
 #sidebar img {
   height: 100%;
   vertical-align: middle; }
 
 .navCurrent {
-  background-color: #0B2B5C; }
+  background-color: #0b2b5c; }
 
 .Ncat {
   vertical-align: -.15em;
   padding: 0 .3em;
-  transition: color 0.5s ease;
-  -webkit-transition: color 0.5s ease; }
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease; }
 
 #Sil {
-  color: #ffe566; }
+  color: #ffe666; }
 
 .navCurrent #Sil {
-  color: #ffec8f; }
+  color: #ffed8f; }
 
 #Nil:hover #Sil {
-  color: #fff2b2; }
+  color: #fff3b2; }
 
 #Sva {
   color: #4acaa8; }
 
 .navCurrent #Sva {
-  color: #50d5b2; }
+  color: #50d6b2; }
 
 #Nva:hover #Sva {
-  color: #60e3c0; }
+  color: #60e4c1; }
 
 #Sgd {
   color: #e05ea9; }
@@ -245,43 +248,43 @@ a.rowButtonCurrent, a.rowButtonCurrent:hover {
   color: #54a6ed; }
 
 .navCurrent #Sco {
-  color: #60b3fb; }
+  color: #5fb3fb; }
 
 #Nco:hover #Sco {
   color: #76c0ff; }
 
 #Sro {
-  color: #4cbc61; }
+  color: #4bbd61; }
 
 .navCurrent #Sro {
-  color: #52cb69; }
+  color: #52cc68; }
 
 #Nro:hover #Sro {
-  color: #71e487; }
+  color: #71e587; }
 
 #Sid {
-  color: #faa03a; }
+  color: #fba03a; }
 
 .navCurrent #Sid {
   color: #ffb057; }
 
 #Nid:hover #Sid {
-  color: #fec17a; }
+  color: #ffc17a; }
 
 #Ssc {
   color: #9c4cbc; }
 
 .navCurrent #Ssc {
-  color: #aa55cb; }
+  color: #aa55cc; }
 
 #Nsc:hover #Ssc {
-  color: #c06fe0; }
+  color: #c06fe1; }
 
 #Sck {
   color: #d9524d; }
 
 .navCurrent #Sck {
-  color: #f05d57; }
+  color: #f15c57; }
 
 #Nck:hover #Sck {
   color: #f97974; }
@@ -293,20 +296,19 @@ main {
   display: block;
   margin: 0 auto;
   font-size: 2.4em;
-  background-color: #F8FAFD;
+  background-color: #f8fafd;
   z-index: 2; }
 
 #topSpace {
-  background-color: #F0F3F7;
+  background-color: #f0f3f7;
   height: 1.2em; }
 
 .category {
-  background-color: #F8FAFD;
   padding-top: 1em;
   padding-bottom: 3em; }
 
 main .category:nth-child(odd) {
-  background-color: #F0F3F7; }
+  background-color: #f0f3f7; }
 
 .categoryTitle {
   float: left;
@@ -316,12 +318,12 @@ main .category:nth-child(odd) {
   border-left: 0.5em solid; }
 
 #ilTitle {
-  background-color: #ffe566;
-  border-color: #d4b51e; }
+  background-color: #ffe666;
+  border-color: #d4b51d; }
 
 #vaTitle {
   background-color: #4acaa8;
-  border-color: #228f72; }
+  border-color: #229072; }
 
 #gdTitle {
   background-color: #e05ea9;
@@ -332,11 +334,11 @@ main .category:nth-child(odd) {
   border-color: #236aa8; }
 
 #roTitle {
-  background-color: #4cbc61;
+  background-color: #4bbd61;
   border-color: #2a7a39; }
 
 #idTitle {
-  background-color: #faa03a;
+  background-color: #fba03a;
   border-color: #9f5d12; }
 
 #scTitle {
@@ -345,10 +347,12 @@ main .category:nth-child(odd) {
 
 #ckTitle {
   background-color: #d9524d;
-  border-color: #9a302c; }
+  border-color: #9a2f2b; }
 
 .catDesc {
-  margin: 1em 4% 1em 17em; }
+  margin: 1em 4% 1em 17em;
+  padding-bottom: .5em;
+  border-bottom: .5em solid; }
 
 .item {
   margin: 0 4% 0 17em; }
@@ -358,77 +362,101 @@ a.preview {
   position: relative;
   color: #151515;
   margin-bottom: .6em;
-  transition: background-color 0.5s ease;
-  -webkit-transition: background-color 0.5s ease; }
+  border-right: 0.5em solid transparent;
+  -webkit-transition: background-color 0.5s ease, border-color 0.5s ease;
+  transition: background-color 0.5s ease, border-color 0.5s ease; }
 
 a.preview:hover {
   color: #151515;
-  background-color: #E5E9EE; }
+  background-color: #e5e9ee; }
 
-.preview:hover > .ilB {
-  border-color: #ffec8f; }
+a.ilB:hover {
+  border-color: #fff3b2; }
 
-.preview:hover > .vaB {
-  border-color: #60e3c0; }
+a.vaB:hover {
+  border-color: #60e4c1; }
 
-.preview:hover > .gdB {
+a.gdB:hover {
   border-color: #fd7fc8; }
 
-.preview:hover > .coB {
+a.coB:hover {
   border-color: #76c0ff; }
 
-.preview:hover > .roB {
-  border-color: #71e487; }
+a.roB:hover {
+  border-color: #71e587; }
 
-.preview:hover > .idB {
-  border-color: #fec17a; }
+a.idB:hover {
+  border-color: #ffc17a; }
 
-.preview:hover > .scB {
-  border-color: #c06fe0; }
+a.scB:hover {
+  border-color: #c06fe1; }
 
-.preview:hover > .ckB {
+a.ckB:hover {
   border-color: #f97974; }
 
 .thumb {
-  height: 6em;
-  width: 6em;
+  height: 6.5em;
+  width: 6.5em;
   float: left; }
 
 .previewDetails {
-  min-height: 6em;
-  padding-left: .7em;
-  overflow: hidden;
-  border-right: 0.5em solid rgba(255, 255, 255, 0);
-  transition: border-color 0.5s ease;
-  -webkit-transition: border-color 0.5s ease; }
+  min-height: 6.5em;
+  padding-left: .2em;
+  overflow: hidden; }
 
 .itemTitle {
   float: left; }
 
 .previewDesc {
-  float: left;
-  margin-right: .7em;
   padding-bottom: .2em;
-  clear: left; }
+  margin: 0 .5em; }
 
 .detail {
   overflow: hidden;
   display: none;
-  border-right: .5em solid #E0E3E7;
-  padding: 0 .6em .6em 0;
-  margin-bottom: .8em; }
+  background-color: #e5e9ee;
+  margin-bottom: 1.3em;
+  border-bottom: .5em solid; }
+
+.detail > p {
+  padding: 0 .5em; }
+
+.ilB {
+  border-color: #ffe666; }
+
+.vaB {
+  border-color: #4acaa8; }
+
+.gdB {
+  border-color: #e05ea9; }
+
+.coB {
+  border-color: #54a6ed; }
+
+.roB {
+  border-color: #4bbd61; }
+
+.idB {
+  border-color: #fba03a; }
+
+.scB {
+  border-color: #9c4cbc; }
+
+.ckB {
+  border-color: #d9524d; }
 
 img.floatL {
   float: left;
-  padding: .7em .7em .7em 0;
+  padding: .7em .7em 0 0;
   max-width: 40%; }
 
 img.floatR {
   float: right;
-  padding: .7em 0 .7em .7em;
+  padding: .7em 0 0 .7em;
   max-width: 40%; }
 
 img.wide {
+  float: left;
   width: 100%; }
 
 .embedContainer {
@@ -475,11 +503,11 @@ img.wide {
   height: 100%; }
 
 #detailCloseButton {
-  transition: fill 0.5s ease;
-  -webkit-transition: fill 0.5s ease; }
+  -webkit-transition: fill 0.5s ease;
+  transition: fill 0.5s ease; }
 
 #detailClose:hover > #detailCloseButton {
-  fill: #97ABCE; }
+  fill: #97abce; }
 
 /* ----- SPLASH AREA ----- */
 #splash {
@@ -491,12 +519,6 @@ img.wide {
   background-size: cover;
   background-position: center top; }
 
-#iconWrapper {
-  width: 100%;
-  /* height set with js based on window */
-  position: absolute;
-  top: 0; }
-
 .icon {
   top: 60%;
   left: 50%;
@@ -506,48 +528,48 @@ img.wide {
 .iconText {
   position: absolute;
   opacity: 0;
-  transition: opacity 1s ease;
-  -webkit-transition: opacity 1s ease; }
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease; }
 
 .iconText:hover {
   opacity: 1; }
 
 #icon1 {
-  transform: translate(-50%, -50%) rotate(-105deg) translateY(-285%) rotate(105deg);
   -webkit-transform: translate(-50%, -50%) rotate(-105deg) translateY(-285%) rotate(105deg);
-  -ms-transform: translate(-50%, -50%) rotate(-105deg) translateY(-285%) rotate(105deg); }
+  -ms-transform: translate(-50%, -50%) rotate(-105deg) translateY(-285%) rotate(105deg);
+  transform: translate(-50%, -50%) rotate(-105deg) translateY(-285%) rotate(105deg); }
 
 #icon2 {
-  transform: translate(-50%, -50%) rotate(-75deg) translateY(-285%) rotate(75deg);
   -webkit-transform: translate(-50%, -50%) rotate(-75deg) translateY(-285%) rotate(75deg);
-  -ms-transform: translate(-50%, -50%) rotate(-75deg) translateY(-285%) rotate(75deg); }
+  -ms-transform: translate(-50%, -50%) rotate(-75deg) translateY(-285%) rotate(75deg);
+  transform: translate(-50%, -50%) rotate(-75deg) translateY(-285%) rotate(75deg); }
 
 #icon3 {
-  transform: translate(-50%, -50%) rotate(-45deg) translateY(-285%) rotate(45deg);
   -webkit-transform: translate(-50%, -50%) rotate(-45deg) translateY(-285%) rotate(45deg);
-  -ms-transform: translate(-50%, -50%) rotate(-45deg) translateY(-285%) rotate(45deg); }
+  -ms-transform: translate(-50%, -50%) rotate(-45deg) translateY(-285%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(-45deg) translateY(-285%) rotate(45deg); }
 
 #icon4 {
-  transform: translate(-50%, -50%) rotate(-15deg) translateY(-285%) rotate(15deg);
   -webkit-transform: translate(-50%, -50%) rotate(-15deg) translateY(-285%) rotate(15deg);
-  -ms-transform: translate(-50%, -50%) rotate(-15deg) translateY(-285%) rotate(15deg); }
+  -ms-transform: translate(-50%, -50%) rotate(-15deg) translateY(-285%) rotate(15deg);
+  transform: translate(-50%, -50%) rotate(-15deg) translateY(-285%) rotate(15deg); }
 
 #icon5 {
-  transform: translate(-50%, -50%) rotate(15deg) translateY(-285%) rotate(-15deg);
   -webkit-transform: translate(-50%, -50%) rotate(15deg) translateY(-285%) rotate(-15deg);
-  -ms-transform: translate(-50%, -50%) rotate(15deg) translateY(-285%) rotate(-15deg); }
+  -ms-transform: translate(-50%, -50%) rotate(15deg) translateY(-285%) rotate(-15deg);
+  transform: translate(-50%, -50%) rotate(15deg) translateY(-285%) rotate(-15deg); }
 
 #icon6 {
-  transform: translate(-50%, -50%) rotate(45deg) translateY(-285%) rotate(-45deg);
   -webkit-transform: translate(-50%, -50%) rotate(45deg) translateY(-285%) rotate(-45deg);
-  -ms-transform: translate(-50%, -50%) rotate(45deg) translateY(-285%) rotate(-45deg); }
+  -ms-transform: translate(-50%, -50%) rotate(45deg) translateY(-285%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(45deg) translateY(-285%) rotate(-45deg); }
 
 #icon7 {
-  transform: translate(-50%, -50%) rotate(75deg) translateY(-285%) rotate(-75deg);
   -webkit-transform: translate(-50%, -50%) rotate(75deg) translateY(-285%) rotate(-75deg);
-  -ms-transform: translate(-50%, -50%) rotate(75deg) translateY(-285%) rotate(-75deg); }
+  -ms-transform: translate(-50%, -50%) rotate(75deg) translateY(-285%) rotate(-75deg);
+  transform: translate(-50%, -50%) rotate(75deg) translateY(-285%) rotate(-75deg); }
 
 #icon8 {
-  transform: translate(-50%, -50%) rotate(105deg) translateY(-285%) rotate(-105deg);
   -webkit-transform: translate(-50%, -50%) rotate(105deg) translateY(-285%) rotate(-105deg);
-  -ms-transform: translate(-50%, -50%) rotate(105deg) translateY(-285%) rotate(-105deg); }
+  -ms-transform: translate(-50%, -50%) rotate(105deg) translateY(-285%) rotate(-105deg);
+  transform: translate(-50%, -50%) rotate(105deg) translateY(-285%) rotate(-105deg); }

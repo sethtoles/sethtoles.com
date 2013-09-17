@@ -1,6 +1,6 @@
 /* ----- SIDEBAR ----- */
 #sidebar {
-	background-color: #051B3C;
+	background-color: $sBar;
 	padding: 0;
 	margin: .4em 0 1em 0;
 	position: absolute;
@@ -18,7 +18,7 @@
 }
 
 #sidebar li:hover {
-	background-color: #103368;
+	background-color: $sBarHov;
 }
 
 #sidebar img {
@@ -27,7 +27,7 @@
 }
 
 .navCurrent {
-	background-color: #0B2B5C;
+	background-color: $sBarCur;
 }
 
 .Ncat {
@@ -36,34 +36,34 @@
 	@include transition(color .5s ease);
 }
 
-#Sil {color: #ffe566;}
-.navCurrent #Sil {color: #ffec8f;}
-#Nil:hover #Sil {color: #fff2b2;}
+#Sil {color: $il;}
+.navCurrent #Sil {color: $ilMed;}
+#Nil:hover #Sil {color: $ilLight;}
 
-#Sva {color: #4acaa8;}
-.navCurrent #Sva {color: #50d5b2;}
-#Nva:hover #Sva {color: #60e3c0;}
+#Sva {color: $va;}
+.navCurrent #Sva {color: $vaMed;}
+#Nva:hover #Sva {color: $vaLight;}
 
-#Sgd {color: #e05ea9;}
-.navCurrent #Sgd {color: #e86db4;}
-#Ngd:hover #Sgd {color: #fd7fc8;}
+#Sgd {color: $gd;}
+.navCurrent #Sgd {color: $gdMed;}
+#Ngd:hover #Sgd {color: $gdLight;}
 
-#Sco {color: #54a6ed;}
-.navCurrent #Sco {color: #60b3fb;}
-#Nco:hover #Sco {color: #76c0ff;}
+#Sco {color: $co;}
+.navCurrent #Sco {color: $coMed;}
+#Nco:hover #Sco {color: $coLight;}
 
-#Sro {color: #4cbc61;}
-.navCurrent #Sro {color: #52cb69;}
-#Nro:hover #Sro {color: #71e487;}
+#Sro {color: $ro;}
+.navCurrent #Sro {color: $roMed;}
+#Nro:hover #Sro {color: $roLight;}
 
-#Sid {color: #faa03a;}
-.navCurrent #Sid {color: #ffb057;}
-#Nid:hover #Sid {color: #fec17a;}
+#Sid {color: $id;}
+.navCurrent #Sid {color: $idMed;}
+#Nid:hover #Sid {color: $idLight;}
 
-#Ssc {color: #9c4cbc;}
-.navCurrent #Ssc {color: #aa55cb;}
-#Nsc:hover #Ssc {color: #c06fe0;}
+#Ssc {color: $sc;}
+.navCurrent #Ssc {color: $scMed;}
+#Nsc:hover #Ssc {color: $scLight;}
 
-#Sck {color: #d9524d;}
-.navCurrent #Sck {color: #f05d57;}
-#Nck:hover #Sck {color: #f97974;}
+#Sck {color: $ck;}
+.navCurrent #Sck {color: $ckMed;}
+#Nck:hover #Sck {color: $ckLight;}
