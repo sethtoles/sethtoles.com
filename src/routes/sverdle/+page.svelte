@@ -1,14 +1,12 @@
-<script>
+<script lang="ts">
 	import { confetti } from '@neoconfetti/svelte';
 	import { enhance } from '$app/forms';
-
+	import type { PageData, ActionData } from './$types';
 	import { reduced_motion } from './reduced-motion';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: PageData;
 
-	/** @type {import('./$types').ActionData} */
-	export let form;
+	export let form: ActionData;
 
 	/** Whether or not the user has won */
 	$: won = data.answers.at(-1) === 'xxxxx';
@@ -22,16 +20,14 @@
 	/**
 	 * A map of classnames for all letters that have been guessed,
 	 * used for styling the keyboard
-	 * @type {Record<string, 'exact' | 'close' | 'missing'>}
 	 */
-	let classnames;
+	let classnames: Record<string, 'exact' | 'close' | 'missing'>;
 
 	/**
 	 * A map of descriptions for all letters that have been guessed,
 	 * used for adding text for assistive technology (e.g. screen readers)
-	 * @type {Record<string, string>}
 	 */
-	let description;
+	let description: Record<string, string>;
 
 	$: {
 		classnames = {};
@@ -57,11 +53,12 @@
 	/**
 	 * Modify the game state without making a trip to the server,
 	 * if client-side JavaScript is enabled
-	 * @param {MouseEvent} event
 	 */
-	function update(event) {
+	function update(event: MouseEvent) {
 		const guess = data.guesses[i];
-		const key = /** @type {HTMLButtonElement} */ (event.target).getAttribute('data-key');
+		const key = (event.target as HTMLButtonElement).getAttribute(
+			'data-key'
+		);
 
 		if (key === 'backspace') {
 			data.guesses[i] = guess.slice(0, -1);
@@ -74,9 +71,8 @@
 	/**
 	 * Trigger form logic in response to a keydown event, so that
 	 * desktop users can use the keyboard to play the game
-	 * @param {KeyboardEvent} event
 	 */
-	function keydown(event) {
+	function keydown(event: KeyboardEvent) {
 		if (event.metaKey) return;
 
 		document
@@ -107,11 +103,11 @@
 	<a class="how-to-play" href="/sverdle/how-to-play">How to play</a>
 
 	<div class="grid" class:playing={!won} class:bad-guess={form?.badGuess}>
-		{#each Array(6) as _, row}
+		{#each Array.from(Array(6).keys()) as row (row)}
 			{@const current = row === i}
 			<h2 class="visually-hidden">Row {row + 1}</h2>
 			<div class="row" class:current>
-				{#each Array(5) as _, column}
+				{#each Array.from(Array(5).keys()) as column (column)}
 					{@const answer = data.answers[row]?.[column]}
 					{@const value = data.guesses[row]?.[column] ?? ''}
 					{@const selected = current && column === data.guesses[row].length}
