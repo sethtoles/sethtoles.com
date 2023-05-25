@@ -1,59 +1,59 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { scale, slide } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import Glow from '$lib/Glow.svelte';
+	import Orbit from '$lib/Orbit.svelte';
+
+	let mounted = false;
+	let showOrbit = false;
+
+	onMount(() => {
+		mounted = true;
+
+		window.setTimeout(() => (showOrbit = true), 5000);
+	});
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Seth Toles</title>
+	<meta name="description" content="Seth Toles's personal website" />
 </svelte:head>
 
+{#if showOrbit}
+	<Orbit />
+{/if}
+
+<Glow color="pink" />
+<Glow color="purple" />
+<Glow color="teal" />
+
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	{#if mounted}
+		<h1 in:slide={{ delay: 600, duration: 600 }}>Seth Toles</h1>
+		<div class="divider" in:scale={{ duration: 600 }} />
+		<h2 in:slide={{ delay: 600, duration: 600 }}>Software Engineer</h2>
+	{/if}
 </section>
 
 <style>
 	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
+		text-align: center;
 	}
 
 	h1 {
-		width: 100%;
+		margin-bottom: 0;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
+	.divider {
 		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+		height: 2px;
+		background-color: var(--color-text);
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	h2 {
+		margin-top: 4px;
+		text-transform: uppercase;
+		font-weight: 200;
+		font-size: 28px;
 	}
 </style>
