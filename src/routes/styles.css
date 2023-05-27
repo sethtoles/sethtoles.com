@@ -1,14 +1,18 @@
 @import '@fontsource-variable/crimson-pro';
+@import '@fontsource-variable/red-hat-display';
 
 :root {
-	--color-bg: rgb(22, 25, 38);
+	--color-bg-rgb: 22, 25, 38;
+	--color-bg: rgb(var(--color-bg-rgb));
 	--color-text: rgba(246, 245, 240, 0.9);
 	--color-link: #0DA0F3;
 	--color-link-visited: #8E0DF3;
 	--color-pink: 230, 0, 107;
 	--color-purple: 123, 0, 198;
 	--color-teal: 0, 66, 165;
-	font-family: 'Crimson Pro Variable', serif;
+	--font-serif: 'Crimson Pro Variable', serif;
+	--font-sans-serif: 'Red Hat Display Variable', sans-serif;
+	font-family: var(--font-serif);
 	color: var(--color-text);
 	background-color: var(--color-bg);
 }
@@ -41,10 +45,22 @@ h1 {
 	font-size: 64px;
 }
 
-input,
 button {
-	font-size: inherit;
-	font-family: inherit;
+	font-family: var(--font-sans-serif);
+	font-weight: 300;
+	outline: none;
+	padding: 16px;
+	border: 1px solid var(--color-text);
+	border-radius: 4px;
+	color: var(--color-text);
+	font-size: 20px;
+	background-color: rgba(var(--color-bg-rgb), 0.2);
+	cursor: pointer;
+	transition: background-color 400ms;
+}
+
+button:hover {
+	background-color: rgba(56, 63, 88, 0.2);
 }
 
 button:focus:not(:focus-visible) {

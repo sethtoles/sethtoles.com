@@ -1,16 +1,16 @@
 <script>
-	import { scale, slide } from 'svelte/transition';
+	import { fade, scale, slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import Glow from '$lib/Glow.svelte';
 	import Orbit from '$lib/Orbit.svelte';
 
 	let mounted = false;
-	let showOrbit = false;
+	let decorate = false;
 
 	onMount(() => {
 		mounted = true;
 
-		window.setTimeout(() => (showOrbit = true), 5000);
+		window.setTimeout(() => (decorate = true), 2000);
 	});
 </script>
 
@@ -19,19 +19,22 @@
 	<meta name="description" content="Seth Toles's personal website" />
 </svelte:head>
 
-{#if showOrbit}
+{#if decorate}
 	<Orbit />
-{/if}
 
-<Glow color="pink" />
-<Glow color="purple" />
-<Glow color="teal" />
+	<Glow color="pink" />
+	<Glow color="purple" />
+	<Glow color="teal" />
+{/if}
 
 <section>
 	{#if mounted}
 		<h1 in:slide={{ delay: 600, duration: 600 }}>Seth Toles</h1>
 		<div class="divider" in:scale={{ duration: 600 }} />
 		<h2 in:slide={{ delay: 600, duration: 600 }}>Software Engineer</h2>
+
+		<button in:fade={{ delay: 1000 }}>About</button>
+		<button in:fade={{ delay: 1200 }}>Resume</button>
 	{/if}
 </section>
 
@@ -47,6 +50,7 @@
 	.divider {
 		width: 100%;
 		height: 2px;
+		border-radius: 2px;
 		background-color: var(--color-text);
 	}
 
@@ -55,5 +59,12 @@
 		text-transform: uppercase;
 		font-weight: 200;
 		font-size: 28px;
+	}
+
+	button {
+		display: block;
+		width: 100%;
+		margin: 16px 0;
+		backdrop-filter: blur(16px);
 	}
 </style>

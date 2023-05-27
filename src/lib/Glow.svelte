@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { random } from './utils';
 
 	export let color: 'pink' | 'purple' | 'teal';
 
@@ -38,7 +39,7 @@
 		style:transform="translate({coords.x}px, {coords.y}px"
 		style:transition-duration="{duration}ms"
 		on:transitionend={setTarget}
-		in:fade={{ duration: 6000, delay: 1000 + Math.random() * 7000 }}
+		in:fade={{ duration: 6000, delay: random(1000, 10000) }}
 	/>
 {/if}
 
