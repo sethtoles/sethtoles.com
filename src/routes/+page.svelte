@@ -33,8 +33,8 @@
 		<div class="divider" in:scale={{ duration: 600 }} />
 		<h2 in:slide={{ delay: 600, duration: 600 }}>Software Engineer</h2>
 
-		<button in:fade={{ delay: 1000 }}>About</button>
-		<button in:fade={{ delay: 1200 }}>Resume</button>
+		<!-- <button in:fade={{ delay: 1000 }}>About</button> -->
+		<!-- <button in:fade={{ delay: 1200 }}>Resume</button> -->
 	{/if}
 </section>
 
