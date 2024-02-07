@@ -4,10 +4,11 @@
 	import { BACKGROUND_HSL } from './constants';
 	import { getDistanceFromVelocity, random } from './utils';
 
+	const TWO_PI = Math.PI * 2;
 	const NUM_ORBITS = 2;
 	const MAX_VELOCITY = 20;
 	const MAX_DISTANCE = getDistanceFromVelocity(MAX_VELOCITY, MAX_VELOCITY);
-	const NUM_STEPS = 2000;
+	const NUM_STEPS = 1200;
 	const LAST_STEP_INDEX = NUM_STEPS - 1;
 	const SATURATION = 60;
 	const LIGHTNESS = 45;
@@ -20,8 +21,7 @@
 	let animationFrame: number;
 	let iteration = 1;
 
-	const globalAttractor = { x: 0, y: 0 };
-	const orbits = new Array(NUM_ORBITS).fill(null).map((_, i) => {
+	const orbits = new Array(NUM_ORBITS).fill(null).map((_) => {
 		return {
 			hue: random(20, 40),
 			attraction: random(0.0005, 0.001),
@@ -31,11 +31,17 @@
 		};
 	});
 
+	const globalAttractor = { x: 0, y: 0 };
 	function updateGlobalAttractorPosition() {
+		const centerOffsetX = innerWidth / 2;
+		const centerOffsetY = innerHeight / 2;
+		const phaseX = (iteration / innerWidth) % 1;
+		const phaseY = (iteration / innerHeight) % 1;
+
 		globalAttractor.x =
-			(Math.sin(((iteration / innerWidth) % 1) * 2 * Math.PI) * innerWidth) / 2 + innerWidth / 2;
+			Math.sin(phaseX * TWO_PI) * random(0.8, 1.2) * centerOffsetX + centerOffsetX;
 		globalAttractor.y =
-			(Math.cos(((iteration / innerHeight) % 1) * 2 * Math.PI) * innerHeight) / 2 + innerHeight / 2;
+			Math.cos(phaseY * TWO_PI) * random(0.8, 1.2) * centerOffsetY + centerOffsetY;
 	}
 
 	function draw() {
@@ -45,21 +51,17 @@
 		updateGlobalAttractorPosition();
 
 		ctx.clearRect(0, 0, innerWidth, innerHeight);
+		ctx.lineCap = 'round';
 
 		// Draw orbits
-		for (let i = 0; i < orbits.length; i++) {
-			const { hue, useGlobalAttractor, attraction, velocity, steps } = orbits[i];
-			const attractor = useGlobalAttractor ? globalAttractor : orbits[i - 1].steps[LAST_STEP_INDEX];
-			const lastStep = steps[LAST_STEP_INDEX];
-
-			ctx.lineCap = 'round';
-
-			for (let j = 0; j < steps.length; j++) {
-				const previousStep = steps[j - 1];
+		for (let i = 0; i < NUM_STEPS; i++) {
+			for (let j = 0; j < NUM_ORBITS; j++) {
+				const { hue, steps } = orbits[j];
+				const previousStep = steps[i - 1];
 				if (!previousStep) continue;
 
-				const step = steps[j];
-				const progress = expoOut(j / NUM_STEPS);
+				const step = steps[i];
+				const progress = expoOut(i / NUM_STEPS);
 				const remaining = 1 - progress;
 				ctx.strokeStyle = `hsl(${hue}, ${SATURATION * progress + BACKGROUND_HSL[1] * remaining}%, ${
 					LIGHTNESS * progress + BACKGROUND_HSL[2] * remaining
@@ -67,10 +69,17 @@
 				ctx.lineWidth = step.width;
 
 				ctx.beginPath();
-				ctx.moveTo(steps[j - 1].x, steps[j - 1].y);
+				ctx.moveTo(previousStep.x, previousStep.y);
 				ctx.lineTo(step.x, step.y);
 				ctx.stroke();
 			}
+		}
+
+		// Update latest step
+		for (let i = 0; i < orbits.length; i++) {
+			const { useGlobalAttractor, attraction, velocity, steps } = orbits[i];
+			const attractor = useGlobalAttractor ? globalAttractor : orbits[i - 1].steps[LAST_STEP_INDEX];
+			const lastStep = steps[LAST_STEP_INDEX];
 
 			// Update velocity based on attractor
 			const velocityX = velocity.x + (attractor.x - lastStep.x) * attraction;
@@ -87,7 +96,8 @@
 			}
 
 			const scaledDistance = getDistanceFromVelocity(velocity.x, velocity.y);
-			const width = Math.min(1 / (scaledDistance / MAX_DISTANCE), 10) * (innerWidth / 900);
+			const width =
+				random(0.9, 1.15) * Math.min(1 / (scaledDistance / MAX_DISTANCE), 10) * (innerWidth / 700);
 
 			const stepToUpdate = steps.shift();
 			if (!stepToUpdate) return;

@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { random } from './utils';
+	import {
+		random,
+		getRandomScreenLocation,
+		getDistanceFromPositions,
+		getDistanceFromVelocity,
+	} from './utils';
 
 	export let color: 'pink' | 'purple' | 'teal';
 
@@ -15,14 +20,14 @@
 	let duration = 0;
 
 	function setTarget() {
-		const { x: oldX, y: oldY } = coords;
 		const { innerWidth, innerHeight } = window;
-		const x = -(innerWidth / 2) + Math.random() * innerWidth + offsetX;
-		const y = -(innerHeight / 2) + Math.random() * innerHeight + offsetY;
-		const distance = Math.sqrt(Math.pow(x - oldX, 2) + Math.pow(y - oldY, 2));
-		const maxDistance = Math.sqrt(Math.pow(innerWidth, 2) + Math.pow(innerHeight, 2));
+		const newCoords = getRandomScreenLocation();
+		newCoords.x += offsetX;
+		newCoords.y += offsetY;
+		const distance = getDistanceFromPositions(coords, newCoords);
+		const maxDistance = getDistanceFromVelocity(innerWidth, innerHeight);
 
-		coords = { x, y };
+		coords = newCoords;
 		duration = MAX_DURATION_MS * (distance / maxDistance);
 	}
 
@@ -39,7 +44,7 @@
 		style:transform="translate({coords.x}px, {coords.y}px"
 		style:transition-duration="{duration}ms"
 		on:transitionend={setTarget}
-		in:fade={{ duration: 6000, delay: random(1000, 10000) }}
+		in:fade|global={{ duration: 6000, delay: random(1000, 10000) }}
 	/>
 {/if}
 
@@ -47,8 +52,6 @@
 	div {
 		position: fixed;
 		z-index: -1;
-		top: 50vh;
-		left: 50vw;
 		width: 1800px;
 		height: 1300px;
 		background-image: radial-gradient(

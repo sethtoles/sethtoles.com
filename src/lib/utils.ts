@@ -17,3 +17,9 @@ export function getDistanceFromPositions(start: Position, end: Position) {
 export function getDistanceFromVelocity(x: number, y: number) {
     return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2))
 }
+
+export function getRandomScreenLocation() {
+    return typeof window === 'undefined' ?
+        { x: 0, y: 0 } :
+        { x: random(0, window.innerWidth), y: random(0, window.innerHeight) };
+}

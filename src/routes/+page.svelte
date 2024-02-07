@@ -29,12 +29,12 @@
 
 <section>
 	{#if mounted}
-		<h1 in:slide={{ delay: 600, duration: 600 }}>Seth Toles</h1>
-		<div class="divider" in:scale={{ duration: 600 }} />
-		<h2 in:slide={{ delay: 600, duration: 600 }}>Software Engineer</h2>
+		<h1 in:slide|global={{ delay: 600, duration: 600 }}>Seth Toles</h1>
+		<div class="divider" in:scale|global={{ duration: 600 }} />
+		<h2 in:slide|global={{ delay: 600, duration: 600 }}>Software Engineer</h2>
 
-		<!-- <button in:fade={{ delay: 1000 }}>About</button> -->
-		<!-- <button in:fade={{ delay: 1200 }}>Resume</button> -->
+		<!-- <button in:fade|global={{ delay: 1000 }}>About</button> -->
+		<!-- <button in:fade|global={{ delay: 1200 }}>Resume</button> -->
 	{/if}
 </section>
 
